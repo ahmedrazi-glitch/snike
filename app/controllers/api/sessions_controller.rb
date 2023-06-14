@@ -9,9 +9,9 @@ class Api::SessionsController < ApplicationController
   end
 
   def create
-    username = params[:username]
+    email = params[:email]
     password = params[:password]
-    @user = User.find_by_credentials(username, password)
+    @user = User.find_by_credentials(email, password)
     if @user 
         login!(@user) # consistent with application controller login func
         render "api/users/show"
@@ -19,6 +19,7 @@ class Api::SessionsController < ApplicationController
         render json: {errors: ["The provided credentials were invalid."]}, status: 422
     end 
   end
+
 
   def destroy
     logout! # consistent with application controller logout func 
