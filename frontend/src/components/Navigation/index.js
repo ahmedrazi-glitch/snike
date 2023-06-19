@@ -35,9 +35,9 @@ function Navigation() {
       <>
         <div className="navbar" style={{ backgroundColor: 'lightgray' }}>
           <ul className="navbar-menu">
-            <li className="navbar-item">
+            {/* <li className="navbar-item">
               <a href="#" className="navbar-button">Home</a>
-            </li>
+            </li> */}
             {/* <li className="navbar-item">
               <a href="#" className="navbar-button">About</a>
             </li> */}
@@ -64,24 +64,36 @@ function Navigation() {
         </div>
       </>
     );
-    
   } else {
-    sessionLinks = (
+    return (
       <>
-        <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
+        <div className="navbar" style={{ backgroundColor: 'lightgray' }}>
+          <NavLink exact to="/">Home</NavLink> 
+          <NavLink to="/signup">Join Us</NavLink>
+          <NavLink to="/login">Sign In</NavLink>
+          {sessionLinks}
+          {/* <button to="/signup">Join Us</button>
+          <button to="/login">Sign In</button> */}
+        </div>
       </>
     );
-  }
+  //   sessionLinks = (
+  //     <>
+  //       <NavLink to="/login">Log In</NavLink>
+  //       <NavLink to="/signup">Sign Up</NavLink>
+  //     </>
+  //   );
+  // }
 
-  return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
-        {sessionLinks}
-      </li>
-    </ul>
-  );
+  // return (
+  //   <ul>
+  //     <li>
+  //       <NavLink exact to="/">Home</NavLink>
+  //       {sessionLinks}
+  //     </li>
+  //   </ul>
+  // );
+  }
 }
 export default Navigation;
 
