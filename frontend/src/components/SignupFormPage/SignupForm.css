@@ -1,0 +1,162 @@
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: 50px;
+  margin-bottom: 20px;
+  margin-left: -25%;
+}
+
+h1.header {
+  font-weight: lighter; 
+}
+
+.centered-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-list {
+  color: red;
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.2rem;
+  margin-top: -10px;  /* changes made */
+  margin-bottom: 10px; /* changes made */
+}
+
+input::placeholder {
+  font-size: 20px; 
+  font-weight: lighter;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+}
+
+.form-group input {
+  width: 460px;
+  padding: 10px;
+  font-size: 1.4rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.form-group.inline {
+  display: flex;
+  gap: 0px;
+}
+
+.form-group.inline input {
+  width: calc((180% - 10px) / 2); 
+  margin-left: 6%;
+}
+
+.form-group input:focus {
+  outline: none; 
+  border-color: #000; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 3.5rem;
+  font: inherit;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.PP {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.TOU {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.checkbox-group label {
+  margin-left: 5px;
+}
+
+/* The code below is for making changes to the checkbox.  */
+
+
+.checkbox-group input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.checkbox-group label:hover {
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+  cursor: pointer;
+}
+
+/* .checkbox-group input[type="checkbox"]:checked + label {
+  font-weight: bold;
+} */
+
+.checkbox-group input[type="checkbox"]:focus {
+  outline: none;
+}
+
+.checkbox-group input[type="checkbox"]:focus-visible {
+  outline: 2px solid blue;
+}
+
+
+
+/* The code above is for making changes to the checkbox.  */
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border-radius: 40px;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: gray;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.button-container .submit-button {
+  margin-left: 10px;
+}
+
