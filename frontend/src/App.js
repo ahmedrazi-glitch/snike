@@ -2,14 +2,13 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from "./components/SignupFormPage";
-import Navigation from "./components/Navigation";
-import Navbar from "./components/Navigation";
-import './index.css';
+import NavBar from "./components/NavBar/navbar";
+
 
 function App() {
   return (
     <>
-      <Navigation />
+      <NavBar />
 
         <Switch>
 
@@ -20,7 +19,7 @@ function App() {
             <SignupFormPage />
           </Route>
           {/* <Route exact path="/">
-            
+            <Home/>
           </Route> */}
         </Switch>
     </>

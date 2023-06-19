@@ -81,11 +81,9 @@ function LoginFormPage() {
             Sign In
           </button>
         </div>
-
-        
-        
-        {/* <button type="submit">Log In</button> */}
       </form>
+
+      
       <div className="demo-button-container">
           <button type='submit' className='demologin' onClick={() => dispatch(sessionActions.login({ email: 'demo@user.io', password: 'password' }))}>Demo Login</button>
         </div>

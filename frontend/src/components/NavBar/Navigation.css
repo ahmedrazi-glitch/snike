@@ -1,0 +1,55 @@
+.fa-solid fa-user:hover {
+  cursor: pointer;
+}
+
+.navbar-link:hover {
+  cursor: pointer;
+}
+
+#justName:hover {
+   cursor: auto; 
+}
+
+.bigDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* The code below is to move the links to the right and provide spacing between.  */
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 35px;
+  background-color: #f5f5f5;
+  padding: 0 20px;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-link {
+  margin-left: 10px;
+}
+
+.navbar-link:last-child {
+  margin-left: 20px; /* Adjust the margin as needed */
+}
+
+/* The code below is to move the links to the right and provide spacing between.  */
+
+.navbar-link::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background-color: black;
+  margin-left: 10px;
+}
+
+/* The code below is to style the Navbar links, once the user is logged in  */
+
+
+

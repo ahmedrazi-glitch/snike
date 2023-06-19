@@ -10,6 +10,8 @@ function Navigation() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
 
+  const firstName = sessionUser ? sessionUser.firstName : '';
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -27,37 +29,29 @@ function Navigation() {
 
   let sessionLinks;
   if (sessionUser) {
-    // sessionLinks = (
-    //   <ProfileButton user={sessionUser} />
-    // );
-    // sessionUser={sessionUser}
     return (
       <>
         <div className="navbar" style={{ backgroundColor: 'lightgray' }}>
           <ul className="navbar-menu">
-            {/* <li className="navbar-item">
-              <a href="#" className="navbar-button">Home</a>
-            </li> */}
-            {/* <li className="navbar-item">
-              <a href="#" className="navbar-button">About</a>
-            </li> */}
             {sessionActions.login ? (
               <>
-                <li className="navbar-item navbar-item-right">
-                  <span className="navbar-greeting">Hi, {sessionUser.username}</span>
-                </li>
-                <li className="navbar-item navbar-item-right">
-                  <button className="navbar-button" onClick={handleLogout}>Sign Out</button>
-                </li>
+              <div className='bigDiv' >
+                <div className="navbar-links">
+                    <span className="navbar-link" id='justName'>Hi, {firstName}</span>
+                  </div>
+                  <div className="navbar-links">
+                    <button className="navbar-link" onClick={handleLogout}>Sign Out</button>
+                  </div>
+              </div>
               </>
             ) : (
               <>
-                <li className="navbar-item navbar-item-right">
+                {/* <li className="navbar-item navbar-item-right">
                   <button className="navbar-button" onClick={handleLogin}>Log In</button>
                 </li>
                 <li className="navbar-item navbar-item-right">
                   <button className="navbar-button">Join Us</button>
-                </li>
+                </li> */}
               </>
             )}
           </ul>
@@ -68,31 +62,17 @@ function Navigation() {
     return (
       <>
         <div className="navbar" style={{ backgroundColor: 'lightgray' }}>
-          <NavLink exact to="/">Home</NavLink> 
-          <NavLink to="/signup">Join Us</NavLink>
-          <NavLink to="/login">Sign In</NavLink>
-          {sessionLinks}
-          {/* <button to="/signup">Join Us</button>
-          <button to="/login">Sign In</button> */}
+          {/* <NavLink exact to="/">
+            <img src="https://pngimg.com/uploads/nike/nike_PNG11.png" alt="" className="kutta" style={{ width: '70px', height: 'auto' }} />  
+          </NavLink>  */}
+          <div className="navbar-links">
+            <NavLink className="navbar-link" to="/signup">Join Us</NavLink>
+            <NavLink className="navbar-link" to="/login">Sign In</NavLink>
+            {sessionLinks}
+          </div>
         </div>
       </>
     );
-  //   sessionLinks = (
-  //     <>
-  //       <NavLink to="/login">Log In</NavLink>
-  //       <NavLink to="/signup">Sign Up</NavLink>
-  //     </>
-  //   );
-  // }
-
-  // return (
-  //   <ul>
-  //     <li>
-  //       <NavLink exact to="/">Home</NavLink>
-  //       {sessionLinks}
-  //     </li>
-  //   </ul>
-  // );
   }
 }
 export default Navigation;
