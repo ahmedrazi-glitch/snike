@@ -3,7 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from "./components/SignupFormPage";
 import NavBar from "./components/NavBar/navbar";
-
+import ProductsIndexCom from './components/ProductsIndexComponent/productsIndexCom';
+import ProductIndexItem from './components/ProductIndexItem/ProductIndexItem';
 
 function App() {
   return (
@@ -18,9 +19,12 @@ function App() {
           <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          {/* <Route exact path="/">
-            <Home/>
-          </Route> */}
+          <Route exact path="/products/:productId">
+            <ProductIndexItem/>
+          </Route>
+          <Route exact path="/">
+            <ProductsIndexCom/>
+          </Route>
         </Switch>
     </>
   );
