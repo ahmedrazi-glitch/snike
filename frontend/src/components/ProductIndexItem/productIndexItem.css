@@ -14,6 +14,7 @@
 .product-image img {
   width: 100%;
   height: auto;
+  margin-left: 10%;
 }
 
 .product-info {
@@ -22,13 +23,67 @@
 }
 
 .product-title {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 500;
   margin-bottom: 10px;
+  font-family: helvetica, medium;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 50%;
+}
+
+.sub-title {
+  font-weight: lighter;
+  font-size: 22px;
+}
+
+/* All code below is for the size buttons  */
+
+.product-sizes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 370px;
+  height: 220px;
+  
+  padding: 11px;
+}
+
+.product-sizes button {
+  /* display: flex; */
+  margin: 2px;
+  height: 50px;
+  width: 70px;
+  border: #dcd8d8 solid 1px;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.product-sizes p {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px;
+  height: fit-content;
+}
+.product-sizes button:hover {
+  border: #111  solid 1px;
+}
+
+.select-product-sizes p {
+  margin-left: 3%;
+}
+
+.select-product-sizes {
+  margin-left: 49%;
 }
 
 .product-sizes {
   margin-bottom: 10px;
+  margin-left: 0%;
 }
 
 .size-button {
@@ -39,17 +94,65 @@
   cursor: pointer;
 }
 
+/* All code above is for size buttons or size select title  */
+
 .add-to-cart {
   margin-bottom: 10px;
+  margin-left: 50%;
+  
 }
 
 .cart-button {
   padding: 10px 20px;
-  background-color: #333;
+  background-color: black;
   color: #fff;
   border: none;
   cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 40px;
+  transition: background-color 0.3s;
+  width: 300px;
+  height: 50px;
 }
+
+.cart-button:hover {
+  background-color: gray;
+}
+
+.product-description {
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: 300px;
+  font-weight: lighter;
+  font-size: 20px;
+  font-family: helvetica, medium;
+  margin-left: 50%;
+}
+
+#breakline {
+  height: 1px;
+  margin: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: #CACACA;
+  width: 300px;
+  margin-left: 50%;
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 24px;
+  font-family: helvetica, medium;
+  margin-left: 50%;
+}
+
+/* Move this border when you are done with the div  */
+.product-info {
+  border: 1px solid #ccc;
+  width: 200px;
+}
+/* Move this border when you are done with the div  */
 
 .product-description {
   margin-bottom: 10px;
@@ -57,6 +160,7 @@
 
 .product-reviews {
   margin-bottom: 10px;
+  margin-left: 50%;
 }
 
 .review-dropdown {
@@ -64,3 +168,8 @@
   border: 1px solid #ccc;
   cursor: pointer;
 }
+
+/* The code below here is for experimenting purposes */
+
+
+
