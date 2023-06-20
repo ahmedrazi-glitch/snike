@@ -84,3 +84,4 @@ production:
   database: snike_production
   username: snike
   password: <%= ENV["SNIKE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

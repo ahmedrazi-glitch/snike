@@ -24,7 +24,7 @@ function ProductIndexItem() {
 
   // return (
   //   <>
-  //     console.log('hello');
+  //     
   //   </>
   // );
   return (
