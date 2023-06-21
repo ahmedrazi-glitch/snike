@@ -1,12 +1,12 @@
 import React from 'react';
 import './BottomBanner.css';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 function BottomBanner() {
   return (
     <>
     <div className="banner">
+
       <div className="column">
         <a href="https://www.nike.com/gift-cards" target="_blank" rel="noreferrer"><h1>GIFT CARDS</h1></a>
         <a href="https://www.nike.com/promotions" target="_blank" rel="noreferrer"><h1>PROMOTIONS</h1></a>
@@ -16,6 +16,7 @@ function BottomBanner() {
         <a href="https://www.nike.com/journal" target="_blank" rel="noreferrer"><h1>NIKE JOURNAL</h1></a>
         <a href="https://www.nike.com/help" target="_blank" rel="noreferrer"><h1>SEND US FEEDBACK</h1></a>
       </div>
+
       <div className="column">
         <a href="https://www.nike.com/help" target="_blank" rel="noreferrer"><h1>GET HELP</h1></a>
         <a href="https://www.nike.com/orders" target="_blank" rel="noreferrer"><h2>Order Status</h2></a>
@@ -26,6 +27,7 @@ function BottomBanner() {
         <a href="https://www.nike.com/gift-cards/balance" target="_blank" rel="noreferrer"><h2>Balance</h2></a>
         <a href="https://www.nike.com/help" target="_blank" rel="noreferrer"><h2>Contact Us</h2></a>
       </div>
+
       <div className="column">
         <a href="https://www.nike.com/about" target="_blank" rel="noreferrer"><h1>ABOUT NIKE</h1></a>
         <a href="https://news.nike.com/" target="_blank" rel="noreferrer"><h2>News</h2></a>
@@ -34,21 +36,6 @@ function BottomBanner() {
         <a href="https://purpose.nike.com/" target="_blank" rel="noreferrer"><h2>Purpose</h2></a>
         <a href="https://purpose.nike.com/sustainability" target="_blank" rel="noreferrer"><h2>Sustainability</h2></a>
       </div>
-
-      {/* <div className='icons-container' >
-        <div className='icon'>
-          {/* <a href='https://github.com/ahmedrazi-glitch'>
-            <FaGithub size={40} />
-          </a> */}
-          {/* <Link to="https://github.com/ahmedrazi-glitch" target="_blank"
-            rel="noopener noreferrer"><FaGithub size={40} /></Link>
-        </div>
-        <div className='icon'>
-          <a href='www.example.com'>
-            <FaLinkedin size={40} />
-          </a>
-        </div> */}
-      {/* </div> */} 
 
       <div className='icon-container'>
         <div className='icons'>
@@ -60,6 +47,7 @@ function BottomBanner() {
         </a>
           </div>
       </div>
+
     </div>
     </>
   );

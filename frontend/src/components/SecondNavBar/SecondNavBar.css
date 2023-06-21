@@ -1,0 +1,26 @@
+.second-nav-bar {
+  display: flex;
+  align-items: center;
+  height: 65px;
+}
+
+img#logo {
+  display: flex;
+  justify-content: flex-start;
+  width: 70px;
+  height: 40px;
+  margin-left: 5px;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  padding: none;
+}
+
+.middle-nav-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 30%;
+}
+
+.category-button {
+  
+}
