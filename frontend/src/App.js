@@ -11,11 +11,7 @@ function App() {
   return (
     <>
       <NavBar />
-
-      
-
         <Switch>
-
           <Route exact path="/login">
             <LoginFormPage />
           </Route>
@@ -24,12 +20,12 @@ function App() {
           </Route>
           <Route exact path="/products/:productId">
             <ProductIndexItem/>
-            <BottomBanner/>
           </Route>
           <Route exact path="/">
             <ProductsIndexCom/>
           </Route>
         </Switch>
+      <BottomBanner/>
     </>
   );
 }

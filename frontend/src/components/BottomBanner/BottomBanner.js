@@ -1,5 +1,7 @@
 import React from 'react';
 import './BottomBanner.css';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function BottomBanner() {
   return (
@@ -33,15 +35,31 @@ function BottomBanner() {
         <a href="https://purpose.nike.com/sustainability" target="_blank" rel="noreferrer"><h2>Sustainability</h2></a>
       </div>
 
-      <div className='icons-container' >
+      {/* <div className='icons-container' >
         <div className='icon'>
-          <i class="fa-brands fa-github fa-2x"></i>
+          {/* <a href='https://github.com/ahmedrazi-glitch'>
+            <FaGithub size={40} />
+          </a> */}
+          {/* <Link to="https://github.com/ahmedrazi-glitch" target="_blank"
+            rel="noopener noreferrer"><FaGithub size={40} /></Link>
         </div>
         <div className='icon'>
-          <i class="fa-brands fa-linkedin fa-2x"></i>
-        </div>
+          <a href='www.example.com'>
+            <FaLinkedin size={40} />
+          </a>
+        </div> */}
+      {/* </div> */} 
+
+      <div className='icon-container'>
+        <div className='icons'>
+        <a id="github" className="icon" target="_blank" href="https://github.com/ahmedrazi-glitch" rel="noreferrer">
+          <FaGithub size={30} />
+        </a>
+        <a id="linkedin" className="icon" target="_blank" href="https://www.example.com" rel="noreferrer">
+          <FaLinkedin size={30} />
+        </a>
+          </div>
       </div>
-      
     </div>
     </>
   );
