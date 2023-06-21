@@ -5,11 +5,14 @@ import SignupFormPage from "./components/SignupFormPage";
 import NavBar from "./components/NavBar/navbar";
 import ProductsIndexCom from './components/ProductsIndexComponent/productsIndexCom';
 import ProductIndexItem from './components/ProductIndexItem/ProductIndexItem';
+import BottomBanner from './components/BottomBanner/BottomBanner';
 
 function App() {
   return (
     <>
       <NavBar />
+
+      
 
         <Switch>
 
@@ -21,6 +24,7 @@ function App() {
           </Route>
           <Route exact path="/products/:productId">
             <ProductIndexItem/>
+            <BottomBanner/>
           </Route>
           <Route exact path="/">
             <ProductsIndexCom/>
