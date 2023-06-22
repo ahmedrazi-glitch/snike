@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-ApplicationRecord.transaction do 
+require "open-uri"
+
+# ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
   User.destroy_all
@@ -26,7 +28,7 @@ ApplicationRecord.transaction do
     last_name: 'User'
   )
 
-  product1 = Product.create!( 
+  p1 = Product.create!( 
     name: 'Air Jordy', 
     description: 'lite as feather',
     category: 'Mens',
@@ -35,7 +37,9 @@ ApplicationRecord.transaction do
     price: 45.60
   )
 
-  product2 = Product.create!( 
+  p1.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/left1.webp'), filename: 'p1Photo')
+
+  p2 = Product.create!( 
     name: 'Air Jordy 2', 
     description: 'lite as piegeons feather',
     category: 'kids',
@@ -44,7 +48,9 @@ ApplicationRecord.transaction do
     price: 55.60
   )
 
-  product3 = Product.create!( 
+  p2.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/center.webp'), filename: 'p2Photo')
+
+  p3 = Product.create!( 
     name: 'Air Jordy 3', 
     description: 'kicks',
     category: 'Womens',
@@ -53,9 +59,11 @@ ApplicationRecord.transaction do
     price: 65.60
   )
 
+  p3.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/right.webp'), filename: 'p3Photo')
+
   # More users
 
   puts "Done!"
-end
+
 
 

@@ -4,7 +4,7 @@ import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from "./components/SignupFormPage";
 import NavBar from "./components/NavBar/navbar";
 import ProductsIndexCom from './components/ProductsIndexComponent/productsIndexCom';
-import ProductIndexItem from './components/ProductIndexItem/ProductIndexItem';
+import ProductShowPage from './components/ProductShowPage/ProductShowPage';
 import BottomBanner from './components/BottomBanner/BottomBanner';
 import SecondNavBar from './components/SecondNavBar/SecondNavBar';
 
@@ -21,7 +21,7 @@ function App() {
               <SignupFormPage />
             </Route>
             <Route exact path="/products/:productId">
-              <ProductIndexItem/>
+              <ProductShowPage/>
             </Route>
             <Route exact path="/">
               <ProductsIndexCom/>

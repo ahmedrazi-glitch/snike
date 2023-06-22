@@ -16,12 +16,22 @@ function ProductsIndexCom() {
 
   return (
     <>
-      <div className="product-container">
-        {products.map(product => (
-          <Link key={product.id} to={`/products/${product.id}`} className="product-box">
-            {product.name}
-          </Link>
-        ))}
+      <div className='original'>
+        <h1 className='header' >Originals</h1>
+        <div className="product-container">
+          {products.map(product => (
+            <Link to={`/products/${product.id}`} className="product-box">
+              {/* {product.photoUrl} */}
+              {/* <img src={product.photoUrl} /> */}
+              <ProductIndexItem product={product} />
+              {/* {product.name} */}
+            </Link>
+          ))}
+          
+        </div>
+        {/* {products.map(product => (
+          product.name
+        ))} */}
       </div>
     </>
   );

@@ -3,10 +3,11 @@
 export const RECEIVE_PRODUCTS = 'products/RECEIVE_PRODUCTS';
 export const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT';
 
-export const receiveProduct = (product) => {
+export const receiveProduct = (payload) => {
+  // debugger
   return {
     type: RECEIVE_PRODUCT,
-    product
+    payload
   }
 }
 
@@ -31,7 +32,7 @@ export const getProducts = (state) => {
 // The following are thunk action creators 
 
 export const fetchProducts = () => async(dispatch) => {
-  // debugger
+ 
   const res = await fetch('/api/products');
   const products = await res.json();
   return dispatch(receiveProducts(products));
@@ -39,19 +40,23 @@ export const fetchProducts = () => async(dispatch) => {
 
 export const fetchProduct = (productId) => async (dispatch) => {
   const res = await fetch(`/api/products/${productId}`);
-  const product = await res.json();
-  return dispatch(receiveProduct(product));
+  if (res) {
+    const data = await res.json();
+    return dispatch(receiveProduct(data));
+  }
 }
 
 const productsReducer = (state={}, action) => {
   const nextState = {...state};
+  // let nextState;
   // debugger
   switch(action.type) {
-    case RECEIVE_PRODUCT:
-      return { ...nextState, [action.product.id]: action.product }
     case RECEIVE_PRODUCTS:
       // debugger
       return { ...nextState, ...action.products }
+    case RECEIVE_PRODUCT:
+      // debugger
+      return { ...nextState, [action.payload.product.id]: action.payload.product }
     default: 
       return state;
   }
