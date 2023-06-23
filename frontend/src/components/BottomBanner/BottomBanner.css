@@ -1,4 +1,4 @@
-a {
+.column a {
   color: gray;
   font-size: 8px;
   font-weight: 300;
@@ -29,9 +29,9 @@ a {
   margin-right: 40px;
 }
 
-h2 {
+/* h2 {
   margin-left: 30%;
-}
+} */
 
 h1 {
   font-size: small;
@@ -49,12 +49,12 @@ h1 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: gray;
+  background-color: white;
   margin-left: 10px;
 }
 
 .icon svg {
-  color: white;
+  color: black;
 }
 
 .icon-container {

@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from "./components/SignupFormPage";
 import NavBar from "./components/NavBar/navbar";
+import ProductIndexPage from './components/ProductsIndexPage/ProductsIndexPage';
 import ProductsIndexCom from './components/ProductsIndexComponent/productsIndexCom';
 import ProductShowPage from './components/ProductShowPage/ProductShowPage';
 import BottomBanner from './components/BottomBanner/BottomBanner';
@@ -16,6 +17,9 @@ function App() {
           <Switch>
             <Route exact path="/login">
               <LoginFormPage />
+            </Route>
+            <Route exact path="/products/mens">
+              <ProductIndexPage/>
             </Route>
             <Route exact path="/signup">
               <SignupFormPage />

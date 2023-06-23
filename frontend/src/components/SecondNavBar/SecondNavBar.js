@@ -1,9 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import ProductsIndexPage from '../ProductsIndexPage/ProductsIndexPage';
 import "./SecondNavBar.css";
 
 
 function SecondNavBar() {
+
+  const [activeCategory, setActiveCategory] = useState('');
+
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category);
+  };
 
 
   return (
@@ -18,19 +26,23 @@ function SecondNavBar() {
 
             <button onClick={''} className="category-button"> New&nbsp;&&nbsp;Featured </button>
           
-            <button onClick={''} className="category-button"> Men </button> 
+            <Link to={`/products/mens`} className="category-button"> Men </Link> 
 
             <button onClick={''} className="category-button"> Women </button>
 
             <button  onClick={''}className="category-button"> Kids </button>
         
-            <Link to="/search?q=Accessories"> <button className="category-button"> Accessories </button></Link>  
+            <Link to="/search?q=Accessories"> 
+            {/* <button className="category-button"> Accessories </button> */}
+            Accessories
+            </Link>  
 
             <button onClick={''}className="category-button"> Sale </button>
           </div>
         </div>
 
       </div>
+      {activeCategory === 'men' && <ProductsIndexPage />}
     </>
   );
 }

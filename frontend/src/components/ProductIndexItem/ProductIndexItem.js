@@ -10,10 +10,6 @@ function ProductsIndexItem({product}) {
 
   return (
     <>
-      {/* <Link className="product-box"> */}
-        {/* <ProductShowPage />  */}
-        {/* // image title price  */}
-      {/* </Link> */}
       <img className="photo" src={product.photoUrl} />
     </>
   );

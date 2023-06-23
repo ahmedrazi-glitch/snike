@@ -1,0 +1,34 @@
+.category-comp {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.categories-wrapper{
+  height: 30%;
+  width: 15%;
+  /* background-color: rgb(136, 136, 236); */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.categories-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 0vw;
+  height: 30%;
+}
+
+li {
+  list-style: none;
+}
