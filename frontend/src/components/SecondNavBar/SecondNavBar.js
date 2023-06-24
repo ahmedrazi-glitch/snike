@@ -24,25 +24,26 @@ function SecondNavBar() {
         <div className="middle-nav-bar"> 
           <div className="category-buttons">
 
-            <button onClick={''} className="category-button"> New&nbsp;&&nbsp;Featured </button>
+            <Link to={`/products/all`} className="all-category-button"> New&nbsp;&&nbsp;Featured </Link>
           
             <Link to={`/products/mens`} className="category-button"> Men </Link> 
 
-            <button onClick={''} className="category-button"> Women </button>
+            <Link to={`/products/womens`} className="women-category-button"> Women </Link>
 
-            <button  onClick={''}className="category-button"> Kids </button>
+            <Link to={`/products/kids`} className="kids-category-button"> Kids </Link>
         
-            <Link to="/search?q=Accessories"> 
-            {/* <button className="category-button"> Accessories </button> */}
-            Accessories
-            </Link>  
+            <Link to="/search?q=Accessories" className="access-category-button" > Accessories </Link>  
 
-            <button onClick={''}className="category-button"> Sale </button>
+            <Link to={`/products/sale`} className="category-button"> Sale </Link>
           </div>
         </div>
 
+        <div className="bag" >
+          <i  id="bag" class="fas fa-shopping-bag"></i>
+        </div>
+
       </div>
-      {activeCategory === 'men' && <ProductsIndexPage />}
+      {/* {activeCategory === 'men' && <ProductsIndexPage />} */}
     </>
   );
 }

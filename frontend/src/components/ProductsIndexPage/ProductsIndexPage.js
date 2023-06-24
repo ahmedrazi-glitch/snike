@@ -22,12 +22,7 @@ function ProductIndexPage() {
   return (
     <div className='page-wrapper' >
       <div className="product-index-page">
-        {/* <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}> */}
-          {/* Sidebar content */}
-        {/* </div> */}
-        {/* <div className='category-side-bar' > */}
-          <CategoryComponent/>
-        {/* </div> */}
+        <CategoryComponent/>
         <div className="products-container">
           {products.map((product, index) => (
             <Link className='actual-link' to={`/products/${product.id}`}>
@@ -40,9 +35,6 @@ function ProductIndexPage() {
             </Link>
           ))}
         </div> 
-        {/* <button className="sidebar-toggle" onClick={toggleSidebar}> */}
-          {/* Toggle Sidebar */}
-        {/* </button> */}
       </div>
     </div>
   );

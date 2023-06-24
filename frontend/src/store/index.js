@@ -1,7 +1,8 @@
 import { legacy_createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session';
-import productsReducer from './products'
+import productsReducer from './products';
+import reviewsReducer from './reviews';
 
 let enhancer;
 
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
   // session: sessionReducer,
   // likes: likesReducer  
   session,
-  products: productsReducer
+  products: productsReducer,
+  reviews: reviewsReducer
 });
 
 const configureStore = (preloadedState) => {

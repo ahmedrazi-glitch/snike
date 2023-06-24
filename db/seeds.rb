@@ -11,13 +11,19 @@ require "open-uri"
 # ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
-  User.destroy_all
+  
+  Review.destroy_all
   Product.destroy_all
+  User.destroy_all
+  
 
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
-  ApplicationRecord.connection.reset_pk_sequence!('users')
+  ApplicationRecord.connection.reset_pk_sequence!('reviews')
   ApplicationRecord.connection.reset_pk_sequence!('products')
+  ApplicationRecord.connection.reset_pk_sequence!('users')
+  
+  
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
@@ -39,10 +45,34 @@ require "open-uri"
 
   p1.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/left1.webp'), filename: 'p1Photo')
 
+  review1 = Review.create!(
+    user_id: user1.id,
+    product_id: p1.id,
+    title: 'Love this product',
+    body: 'I hate this product, it is so good. I have to sleep with them.',
+    rating: 4
+  )
+
+  review2 = Review.create!(
+    user_id: user1.id,
+    product_id: p1.id,
+    title: 'mediocire product',
+    body: 'Its ok !!',
+    rating: 3
+  )
+
+  review3 = Review.create!(
+    user_id: user1.id,
+    product_id: p1.id,
+    title: 'The sole is good !!',
+    body: 'The sole is very soft.',
+    rating: 4
+  )
+
   p2 = Product.create!( 
     name: 'Air Jordy 2', 
     description: 'lite as piegeons feather',
-    category: 'kids',
+    category: 'Kids',
     size: 'M',
     color: 'Green',
     price: 55.60
