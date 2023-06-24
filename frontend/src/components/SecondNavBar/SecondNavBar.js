@@ -17,16 +17,20 @@ function SecondNavBar() {
   return (
     <>
       <div className="second-nav-bar" style={{ backgroundColor: 'white' }}>
-        <Link to="/" >
-          <img id="logo" src="https://pngimg.com/uploads/nike/nike_PNG11.png"/>
-        </Link>
 
-        <div className="middle-nav-bar"> 
+        <div className="logo" >
+          <Link to="/" >
+            <img id="logo" src="https://pngimg.com/uploads/nike/nike_PNG11.png"/>
+          </Link>
+        </div>
+
+        {/* <div className="middle-nav-bar">  */}
+        <div className="nav-links-container">
           <div className="category-buttons">
 
             <Link to={`/products/all`} className="all-category-button"> New&nbsp;&&nbsp;Featured </Link>
           
-            <Link to={`/products/mens`} className="category-button"> Men </Link> 
+            <Link to={`/products/mens`} className="men-category-button"> Men </Link> 
 
             <Link to={`/products/womens`} className="women-category-button"> Women </Link>
 
@@ -34,11 +38,11 @@ function SecondNavBar() {
         
             <Link to="/search?q=Accessories" className="access-category-button" > Accessories </Link>  
 
-            <Link to={`/products/sale`} className="category-button"> Sale </Link>
+            <Link to={`/products/sale`} className="sale-category-button"> Sale </Link>
           </div>
         </div>
 
-        <div className="bag" >
+        <div className="bag-container" >
           <i  id="bag" class="fas fa-shopping-bag"></i>
         </div>
 
