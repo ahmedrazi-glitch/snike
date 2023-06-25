@@ -16,7 +16,6 @@ function ClassicIndexComp() {
   return (
     <>
       <div className='classic-index-wrapper'>
-        {/* <h1 className='header'>Trending</h1> */}
           <div className="classic-products-container">
             {products.slice(-9).map(product => (
               <Link to={`/products/${product.id}`} className="classic-product-box" key={product.id}>

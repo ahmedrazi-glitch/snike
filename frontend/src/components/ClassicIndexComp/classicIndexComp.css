@@ -1,12 +1,17 @@
-.classic-index-wrapper {
+ .classic-index-wrapper {
   width: 100%;
+  margin-bottom: 5%;
 }
 
 .classic-products-container {
   display: flex;
   flex-direction: row;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .classic-product-box {
+  justify-content: space-between;
   cursor: pointer;
+  margin-left: 1%;
 }
