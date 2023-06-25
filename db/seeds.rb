@@ -189,7 +189,105 @@ require "open-uri"
   )
 
   m9.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/mens9.webp'), filename: 'm9Photo')
+
+  c1 = Product.create!( 
+    name: 'Nike Air Force 1 07', 
+    description: 'The radiance lives on in the Nike Air Force 1 07, the b-ball OG that puts a fresh spin on what you know best: durably stitched overlays.',
+    category: 'Mens',
+    size: 'XL',
+    color: 'White',
+    price: 255.60
+  )
+
+  c1.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/classic1.webp'), filename: 'c1Photo')
   
+  c2 = Product.create!( 
+    name: 'Nike Air Force 1 07 FlyEase', 
+    description: 'Quicker than 1, 2, 3—the original hoops shoe lets you step in and get going. Its easy-entry FlyEase system gives you a hands-free experience, while crisp leather dons the cleanest color for ultimate wearability.',
+    category: 'Mens',
+    size: 'XL',
+    color: 'White',
+    price: 155.60
+  )
+
+  c2.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/classic2.webp'), filename: 'c2Photo')
+
+  c3 = Product.create!( 
+    name: 'Nike Force 1 LE', 
+    description: 'This is what legends are made of. The Nike Force 1 LE brings back the 82 hardwood icon into an everyday style in all-white or all-black.',
+    category: 'Mens',
+    size: 'XL',
+    color: 'White',
+    price: 175.60
+  )
+
+  c3.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/classic3.webp'), filename: 'c3Photo')
+
+  c4 = Product.create!( 
+    name: 'Nike Air Force 1 Mid 07', 
+    description: 'The Air Force 1 Mid 07 is everything you know best: crisp overlays, bold accents and the perfect amount of flash to let you shine.',
+    category: 'Mens',
+    size: 'XL',
+    color: 'White',
+    price: 155.60
+  )
+
+  c4.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/classic4.webp'), filename: 'c4Photo')
+
+  c5 = Product.create!( 
+    name: 'Nike Air Force 1 Low Retro', 
+    description: 'Got your fave color yet? No worries. The "Color of the Month" series lets you feed your need while celebrating a little-known piece of Nike history—the original Color of the Month series, back in 1984, may have saved the Air Force 1 from extinction.',
+    category: 'Mens',
+    size: 'XL',
+    color: 'White',
+    price: 125.60
+  )
+
+  c5.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/classic5.webp'), filename: 'c5Photo')
+
+  c6 = Product.create!( 
+    name: 'Nike Air Force 1 PLT.AF.ORM', 
+    description: 'The AF1 has been a sneaker favorite for more than 40 years—first on the court and then on the street. Today, its classic, easy-to-wear style rises to new heights with the Nike Air Force 1 PLT.AF.ORM.',
+    category: 'Mens',
+    size: 'XL',
+    color: 'White',
+    price: 115.60
+  )
+
+  c6.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/classic6.webp'), filename: 'c6Photo')
+
+  c7 = Product.create!( 
+    name: 'Nike Air Force 1 07 Next Nature', 
+    description: 'The radiance lives on in the Nike Air Force 1 07 Next Nature—the b-ball original that lets you do good by looking good.',
+    category: 'Mens',
+    size: 'XL',
+    color: 'White',
+    price: 165.60
+  )
+
+  c7.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/classic7.webp'), filename: 'c7Photo')
+
+  c8 = Product.create!( 
+    name: 'Nike Air Force 1 Premium', 
+    description: 'They say the way to the heart is through chocolate. Theyre wrong. Lace into true bliss with this crafted take on the b-ball original. Pairing smooth leather with waxed laces, it delivers love at first sight.',
+    category: 'Mens',
+    size: 'XL',
+    color: 'White',
+    price: 185.60
+  )
+
+  c8.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/classic8.webp'), filename: 'c8Photo')
+
+  c9 = Product.create!( 
+    name: 'Nike Air Force 1 LV8', 
+    description: 'Get ready to play in kicks that are cool and classic—just like you! This hoops original puts a fresh spin on everything you already love about the AF1: bold colors, comfy fabrics.',
+    category: 'Mens',
+    size: 'XL',
+    color: 'White',
+    price: 155.60
+  )
+
+  c9.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/classic9.webp'), filename: 'c9Photo')
 
   # More users
 

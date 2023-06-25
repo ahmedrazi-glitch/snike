@@ -7,7 +7,6 @@ import ProductIndexItem from '../ProductIndexItem/ProductIndexItem';
 
 function ProductsIndexCom() {
   const dispatch = useDispatch();  
-  // const { productId } = useParams();
   const products = useSelector(getProducts);
 
   useEffect(() => {
@@ -17,21 +16,14 @@ function ProductsIndexCom() {
   return (
     <>
       <div className='original'>
-        <h1 className='header' >Originals</h1>
+        <h1 className='header' >Trending</h1>
         <div className="product-container">
           {products.slice(0, 3).map(product => (
             <Link to={`/products/${product.id}`} className="product-box">
-              {/* {product.photoUrl} */}
-              {/* <img src={product.photoUrl} /> */}
               <ProductIndexItem product={product} />
-              {/* {product.name} */}
             </Link>
-          ))}
-          
+          ))} 
         </div>
-        {/* {products.map(product => (
-          product.name
-        ))} */}
       </div>
     </>
   );

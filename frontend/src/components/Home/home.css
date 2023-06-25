@@ -1,0 +1,139 @@
+.summer-banner img {
+  width: 100%;
+  height: 300px;
+}
+
+.summer-banner {
+  position: relative;
+}
+
+.banner-text {
+  position: absolute;
+  top: 30%;
+  left: 42%;
+  transform: translate(-90%, -60%);
+  color: white;
+  font-size: 48px;
+  font-family: "Nike Futura","Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.second-banner-text {
+  position: absolute;
+  top: 50%;
+  left: 32%;
+  transform: translate(-70%, -30%);
+  color: white;
+  font-size: 16px;
+  font: inherit;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.shop-button {
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border-radius: 40px;
+  transition: background-color 0.3s;
+
+
+  position: absolute;
+  top: 85%;
+  left: 4.5%;
+  transform: translate(-15%, -95%);
+}
+
+.shop-button:hover {
+  background-color: gray;
+}
+
+.lifestyle-banner img {
+  width: 100%;
+  height: 505px;
+}
+
+.lifestyle-banner-text {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin-bottom: 2%;
+  margin-left: 2%;
+}
+
+.featured-banners {
+  position: relative;
+}
+
+.featured-banners p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin-bottom: 2%;
+  margin-left: 1.8%;
+}
+
+.featured-photos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 2%;
+}
+
+.featured-photos img {
+  width: 47%;
+  height: 45%;
+  justify-content: space-between;
+}
+
+.another-shop-button {
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border-radius: 40px;
+  transition: background-color 0.3s;
+
+  position: absolute;
+  bottom: 5%;
+  left: 7%;
+  transform: translateX(-50%);
+}
+
+.another-another-shop-button {
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border-radius: 40px;
+  transition: background-color 0.3s;
+
+  position: absolute;
+  bottom: 5%;
+  left: 57%;
+  transform: translateX(-50%);
+}
+
+.iconic-comp  p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin-bottom: 2%;
+  margin-left: 1.8%;
+}
+

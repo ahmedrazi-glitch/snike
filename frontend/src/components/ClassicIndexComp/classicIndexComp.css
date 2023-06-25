@@ -1,0 +1,12 @@
+.classic-index-wrapper {
+  width: 100%;
+}
+
+.classic-products-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.classic-product-box {
+  cursor: pointer;
+}

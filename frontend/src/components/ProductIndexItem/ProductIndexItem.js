@@ -1,8 +1,4 @@
-import React, { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { fetchProduct } from "../../store/products";
-// import { Link } from 'react-router-dom';
-// import ProductShowPage from "../ProductShowPage/ProductShowPage";
+import React from "react";
 import './productIndexItem.css';
 
 
@@ -10,7 +6,10 @@ function ProductsIndexItem({product}) {
 
   return (
     <>
-      <img className="photo" src={product.photoUrl} />
+      <div className="product-index-item-wrapper" >
+        <img className="photo" src={product.photoUrl} />
+        <p>{product.name}</p>
+      </div>
     </>
   );
 }
