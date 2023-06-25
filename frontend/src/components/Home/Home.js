@@ -61,7 +61,6 @@ function Home() {
         <h2 className="member-banner-text" >BECOME A MEMBER</h2>
         <h3 className="subheading-member-banner" >Sign up for free. Join the community.</h3>
         <Link className="join-us-homepage-link" to='/signup' >Join Us</Link>
-        
       </div>
     </div>
     </>

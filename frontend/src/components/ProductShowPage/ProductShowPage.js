@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchProduct, getProduct } from "../../store/products";
+import { FaStar } from 'react-icons/fa';
 import './productShowPage.css';
 
 
@@ -14,13 +15,23 @@ import './productShowPage.css';
 
 function ProductShowPage() {
   const dispatch = useDispatch();
-  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedSize, setSelectedSize] = useState(null);
   const [size, setSize] = useState("");
+  const [showReviews, setShowReviews] = useState(false);
   const { productId } = useParams();
   const product = useSelector(getProduct(productId));
-  // const reviews = useSelector(state => Object.values(state.reviews))
+  const reviews = useSelector(state => Object.values(state.reviews));
 
-  const buttons = [];
+  // console.log(reviews);
+  // review is an array of objects. Each object is a review and has a body, title, rating that we will use. 
+
+
+
+  const sizeButtons = [];
+  for (let i = 0; i < 17; i++) {
+    const size = i * 0.5 + 6;
+    sizeButtons.push(size);
+  }
 
   useEffect(() => {
     dispatch(fetchProduct(productId));
@@ -28,13 +39,13 @@ function ProductShowPage() {
 
   // console.log(product.payload);
 
-  const handleSizeClick = (newSize) => {
+  const handleSizeClick = (size) => {
     // setSize(newSize);
-    // setSelectedSize(newSize);
+    setSelectedSize(size);
   };
 
   const toggleShowReviewIndex = () => {
-    // setShowReviewIndex(!showReviewIndex)
+    setShowReviews(!showReviews);
   } 
   // return 1 ? hello : world ;
   return product ? (
@@ -45,34 +56,28 @@ function ProductShowPage() {
       </div>
       <div className="product-info">
         <div className="product-title">
-          Nike Air Zoom Pegasus 38
+          {/* Nike Air Zoom Pegasus 38 */}
+          {product.name}
           <div className="sub-title">
-            
-            Men's Shoe 
+            {product.category}
+            {/* Men's Shoe  */}
             <br/>
-            $155.59
+            {/* $155.59 */}
+            ${product.price}
           </div>  
         </div>
 
         <div className="select-product-sizes">
           <p>Select size</p>
             <div className="product-sizes">
-              
-              {/* <button className="size-button">7</button>
-              <button className="size-button">8</button>
-              <button className="size-button">9</button>
-              <button className="size-button">10</button> */}
-              {Array.from({ length: 17 }, (_, i) => i * 0.5 + 6).map((size) => (
+              {sizeButtons.map((size) => (
                 <button
-                    key={size}
-                    style={
-                        selectedSize === size
-                            ? { border: "1px solid #111" }
-                            : { border: "#dcd8d8 solid 1px" }
-                    }
-                    onClick={() => handleSizeClick(size)}
+                  key={size}
+                  className="size-button" // Add a class for styling
+                  style={selectedSize === size ? { border: "1px solid #111" } : { border: "#dcd8d8 solid 1px" }}
+                  onClick={() => handleSizeClick(size)}
                 >
-                    {size}
+                  {size}
                 </button>
               ))}
             </div>
@@ -84,7 +89,8 @@ function ProductShowPage() {
           <button className="cart-button">Add to Cart</button>
         </div>
         <div className="product-description">
-          The Nike Air Zoom Pegasus 38 delivers responsive cushioning and a secure fit. The mesh upper helps provide durability and breathability, while the Nike Zoom unit helps cushion your stride. 
+          {/* The Nike Air Zoom Pegasus 38 delivers responsive cushioning and a secure fit. The mesh upper helps provide durability and breathability, while the Nike Zoom unit helps cushion your stride.  */}
+          {product.description}
         </div>
         <div id="breakline"></div>
         <div className="free-shipping-and-returns-header" >
@@ -92,27 +98,55 @@ function ProductShowPage() {
         </div>
         <div id="breakline"></div>
         <div className="product-reviews">
-          {/* <select className="review-dropdown">
-            <option value="">Select a review</option>
-            <option value="review1">Review 1</option>
-            <option value="review2">Review 2</option>
-            <option value="review3">Review 3</option>
-          </select> */}
-          {/* <button id="review-button" onClick={''}>
-            <h5>Reviews&nbsp;({}) <span id="v">╲╱</span> </h5>
-          </button> */}
-          {/* <div className="reviews-dropdown">
-            <button className="dropdown-button" onClick={toggleDropdown}>
-              <h5>Reviews ({reviews.length}) <span className={`arrow ${isOpen ? 'open' : ''}`}>&#9662;</span></h5>
-            </button>
-            {isOpen && (
-              <div className="dropdown-content">
-                {reviews.map((review, index) => (
-                  <p key={index}>{review}</p>
-                ))}
-              </div>
-            )}
-          </div> */}
+          <button id="review-button" onClick={() => setShowReviews(!showReviews)}>     
+            <p>
+              Reviews ({reviews.length}) <span id="v">╲╱</span>
+            </p>
+          </button>
+        {/* </div> */}
+
+
+          {/* Conditional rendering for the review dropdown */}
+          {showReviews && (
+            <div className="review-dropdown">
+              {reviews.map((review, index) => (
+                <div className="review" key={index}>
+                  <h4>{review.title}</h4>
+                  {/* Render the star ratings based on review.rating */}
+                  <div className="star-ratings">
+                    {/* {Array.from({ length: review.rating }, (_, i) => ( */}
+                      {/* <FaStar className="star filled" />
+                      <FaStar className="star filled" />
+                      <FaStar className="star filled" />
+                      <FaStar className="star filled" />
+                      <FaStar className="star filled" /> */}
+                    {/* ))}
+                    {/* {Array.from({ length: 5 - review.rating }, (_, i) => ( */}
+                      {/* <FaStar  className="star" />
+                      <FaStar  className="star" />
+                      <FaStar  className="star" />
+                      <FaStar  className="star" />
+                      <FaStar  className="star" /> */}
+                    {/* ))} */}
+                    {Array.from({ length: 5 }, (_, i) => (
+                      <FaStar
+                        key={i}
+                        className={`star ${i < review.rating ? 'filled' : ''}`}
+                      />
+                    ))}
+                  </div>
+                  <p>{review.body}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+
+
+        <div id="breakline"></div>
+        <div className="review-form" >
+            
         </div>
       </div>
     </div>

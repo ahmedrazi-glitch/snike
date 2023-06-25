@@ -11,22 +11,13 @@
   flex: 1;
 }
 
-/* below is CSS Code for image  */
-
-/* .product-image img {
-  width: 600px;
-  height: 600px;
-} */
-
-/* below is CSS Code for image  */
-
 .product-image img {
   width: 100%;
   height: auto;
   margin-left: 20%;
   height: 500px;
   width: 500px;
-  margin-top: 0%;
+  margin-top: -45%;
 }
 
 .product-info {
@@ -63,7 +54,6 @@
 }
 
 .product-sizes button {
-  /* display: flex; */
   margin: 2px;
   height: 50px;
   width: 70px;
@@ -92,7 +82,6 @@
 }
 
 .select-product-sizes {
-  /* margin-left: 30%; */
   margin-left: -30%;
 }
 
@@ -113,7 +102,6 @@
 
 .add-to-cart {
   margin-bottom: 10px;
-  /* margin-left: 30%; */
   margin-left: -30%;
 }
 
@@ -141,7 +129,6 @@
   font-weight: lighter;
   font-size: 20px;
   font-family: helvetica, medium;
-  /* margin-left: 30%; */
   margin-left: -30%;
 }
 
@@ -153,7 +140,6 @@
   width: 100%;
   background-color: #CACACA;
   width: 300px;
-  /* margin-left: 30%; */
   margin-left: -30%;
 }
 
@@ -161,14 +147,13 @@
   font-weight: lighter;
   font-size: 24px;
   font-family: helvetica, medium;
-  /* margin-left: 30%; */
   margin-left: -30%;
 }
 
 /* Move this border when you are done with the div  */
+
 .product-info {
   /* border: 1px solid #ccc; */
-  /* width: 0px; */
   margin-left: 30%;
 }
 /* Move this border when you are done with the div  */
@@ -177,18 +162,93 @@
   margin-bottom: 10px;
 }
 
-.product-reviews {
+/* .product-reviews {
   margin-bottom: 10px;
   margin-left: 30%;
+} */
+
+/* All CSS code below is for the reviews index button  */
+
+.product-reviews {
+  margin-left: -80%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
 }
 
-.review-dropdown {
-  padding: 5px;
-  /* border: 1px solid #ccc; */
+#review-button {
+  background-color: transparent;
+  border: none;
   cursor: pointer;
+  outline: none;
 }
 
-/* The code below here is for experimenting purposes */
+#review-button:hover {
+  color: #757575;
+}
+
+#v {
+  font-size: small;
+  margin-left: 120px;
+}
+
+#review-button p {
+  font-weight: lighter;
+  font-size: 24px;
+  font-family: helvetica, medium;
+  margin-right: 15px;
+}
+
+.review {
+  margin-top: 15%;
+  flex-wrap: wrap;
+}
+
+.review h4 {
+  margin-left: 10%;
+}
+
+.review p {
+  width: 90%;
+  flex-wrap: wrap;
+  margin-left: 10%;
+}
+
+/* .star-ratings {
+  background-color: gold;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+} */
+
+/* .star-ratings {
+  display: flex;
+} */
+
+/* .star {
+  color: black;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid #000;
+} */
 
 
+/* .star.filled {
+  background-color: black;
+} */
 
+/* .star:hover {
+  cursor: pointer;
+} */
+
+.star {
+  color: #ffffff; /* Set the color inside the star to white */
+  border: 1px solid #000000; /* Set the border color to black */
+}
+
+.star.filled {
+  color: #fbc02d; /* Set the color inside the filled star to your desired color */
+}
