@@ -252,3 +252,12 @@
 .star.filled {
   color: #fbc02d; /* Set the color inside the filled star to your desired color */
 }
+
+.review-deleteButton:hover {
+  cursor: pointer;
+}
+
+.review-EditButton:hover {
+  cursor: pointer;
+}
+

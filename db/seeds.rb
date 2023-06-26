@@ -35,8 +35,8 @@ require "open-uri"
   )
 
   p1 = Product.create!( 
-    name: 'Air Jordy', 
-    description: 'lite as feather',
+    name: 'Air Jordan', 
+    description: 'From sanded leather to classic coloring with a satin sheen, this Air Jordan is everything you know best: crisp overlays, bold accents and the perfect amount of flash to let your shoe game shine.',
     category: 'Mens',
     size: 'L',
     color: 'Red',
@@ -70,8 +70,8 @@ require "open-uri"
   )
 
   p2 = Product.create!( 
-    name: 'Air Jordy 2', 
-    description: 'lite as piegeons feather',
+    name: 'Cortez', 
+    description: 'Sometimes more is better. Recrafting the revered look, weve refreshed the design with a wider toe area and firmer side panels so you can comfortably wear them day in, day out.',
     category: 'Kids',
     size: 'M',
     color: 'Green',
@@ -81,8 +81,8 @@ require "open-uri"
   p2.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/center.webp'), filename: 'p2Photo')
 
   p3 = Product.create!( 
-    name: 'Air Jordy 3', 
-    description: 'kicks',
+    name: 'Air Max', 
+    description: 'You know your favorite jeans—perfectly worn, faded in all the right spots, so soft you dont even notice youre wearing em. Now imagine something even better than that. The Air Max 1 "Dirty Denim" nods to the coveted 2003 drop.',
     category: 'Womens',
     size: 'S',
     color: 'Blue',

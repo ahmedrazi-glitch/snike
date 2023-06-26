@@ -5,11 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchProduct, getProduct } from "../../store/products";
 import { FaStar } from 'react-icons/fa';
+import { IoPencilOutline } from 'react-icons/io5';
+import { BsTrash } from 'react-icons/bs';
 import './productShowPage.css';
 
 
 // import ReviewsIndex from "../ReviewsIndex";
-// import { createReview, fetchReview, updateReview } from "../../store/reviews"; 
+import { createReview, fetchReview, updateReview, deleteReview } from "../../store/reviews"; 
 // Import of the reviews comp
 
 
@@ -26,6 +28,10 @@ function ProductShowPage() {
   // review is an array of objects. Each object is a review and has a body, title, rating that we will use. 
 
 
+  // const handleDeleteReview = ({review}) => {
+  //   // e.preventDefault();
+  //   dispatch(deleteReview(review.id)); // this will need a reviewId to work !!
+  // }
 
   const sizeButtons = [];
   for (let i = 0; i < 17; i++) {
@@ -103,10 +109,9 @@ function ProductShowPage() {
               Reviews ({reviews.length}) <span id="v">╲╱</span>
             </p>
           </button>
-        {/* </div> */}
 
 
-          {/* Conditional rendering for the review dropdown */}
+          
           {showReviews && (
             <div className="review-dropdown">
               {reviews.map((review, index) => (
@@ -136,6 +141,13 @@ function ProductShowPage() {
                     ))}
                   </div>
                   <p>{review.body}</p>
+                    <button className="review-EditButton" >
+                      <IoPencilOutline /> Edit
+                    </button>
+
+                    <button className="review-deleteButton" onClick={() => dispatch(deleteReview(review.id))} >
+                      <BsTrash /> Delete
+                    </button>
                 </div>
               ))}
             </div>
