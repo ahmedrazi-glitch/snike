@@ -11,10 +11,11 @@ require "open-uri"
 # ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
-  
+  CartItem.destroy_all
   Review.destroy_all
   Product.destroy_all
   User.destroy_all
+  
   
 
   puts "Resetting primary keys..."
@@ -22,6 +23,7 @@ require "open-uri"
   ApplicationRecord.connection.reset_pk_sequence!('reviews')
   ApplicationRecord.connection.reset_pk_sequence!('products')
   ApplicationRecord.connection.reset_pk_sequence!('users')
+  ApplicationRecord.connection.reset_pk_sequence!('cart_items')
   
   
 
@@ -67,6 +69,13 @@ require "open-uri"
     title: 'The sole is good !!',
     body: 'The sole is very soft.',
     rating: 4
+  )
+
+  item1 = CartItem.create!(
+    user_id: 1,
+    product_id: 1,
+    quantity: 2,
+    options: '6'
   )
 
   p2 = Product.create!( 

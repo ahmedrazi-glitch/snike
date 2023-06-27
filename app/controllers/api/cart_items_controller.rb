@@ -1,7 +1,7 @@
 class Api::CartItemsController < ApplicationController
 
   def index
-    @cart_items = CartItem.all
+    @cart_items = CartItem.where(user_id: current_user.id)
     render :index
   end
 
@@ -14,6 +14,7 @@ class Api::CartItemsController < ApplicationController
     @cart_item = CartItem.new(cart_item_params)
     # debugger
     @cart_item.user_id = current_user.id
+    @cart_item.quantity = 1
     if @cart_item.save
         render :show
     else
