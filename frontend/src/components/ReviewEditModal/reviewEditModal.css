@@ -1,0 +1,48 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent grey background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 800px; /* adjust the width as needed */
+  height: 400px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  font-weight: 500;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.editForm {
+  margin-top: 5%;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 5%;
+}
+
+.editTitle {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.editBody {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.editRating {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+

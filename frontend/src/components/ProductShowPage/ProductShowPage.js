@@ -4,16 +4,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchProduct, getProduct } from "../../store/products";
-import { FaStar } from 'react-icons/fa';
-import { IoPencilOutline } from 'react-icons/io5';
-import { BsTrash } from 'react-icons/bs';
+import ReviewsIndex from "../ReviewsIndex/ReviewsIndex";
 import './productShowPage.css';
-
-
-// import ReviewsIndex from "../ReviewsIndex";
-import { createReview, fetchReview, updateReview, deleteReview } from "../../store/reviews"; 
-// Import of the reviews comp
-
 
 function ProductShowPage() {
   const dispatch = useDispatch();
@@ -24,14 +16,6 @@ function ProductShowPage() {
   const product = useSelector(getProduct(productId));
   const reviews = useSelector(state => Object.values(state.reviews));
 
-  // console.log(reviews);
-  // review is an array of objects. Each object is a review and has a body, title, rating that we will use. 
-
-
-  // const handleDeleteReview = ({review}) => {
-  //   // e.preventDefault();
-  //   dispatch(deleteReview(review.id)); // this will need a reviewId to work !!
-  // }
 
   const sizeButtons = [];
   for (let i = 0; i < 17; i++) {
@@ -40,19 +24,20 @@ function ProductShowPage() {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     dispatch(fetchProduct(productId));
   }, []);
 
-  // console.log(product.payload);
+
 
   const handleSizeClick = (size) => {
-    // setSize(newSize);
     setSelectedSize(size);
   };
 
   const toggleShowReviewIndex = () => {
     setShowReviews(!showReviews);
   } 
+
   // return 1 ? hello : world ;
   return product ? (
     <>
@@ -62,13 +47,10 @@ function ProductShowPage() {
       </div>
       <div className="product-info">
         <div className="product-title">
-          {/* Nike Air Zoom Pegasus 38 */}
           {product.name}
           <div className="sub-title">
             {product.category}
-            {/* Men's Shoe  */}
             <br/>
-            {/* $155.59 */}
             ${product.price}
           </div>  
         </div>
@@ -79,7 +61,7 @@ function ProductShowPage() {
               {sizeButtons.map((size) => (
                 <button
                   key={size}
-                  className="size-button" // Add a class for styling
+                  className="size-button"
                   style={selectedSize === size ? { border: "1px solid #111" } : { border: "#dcd8d8 solid 1px" }}
                   onClick={() => handleSizeClick(size)}
                 >
@@ -95,7 +77,6 @@ function ProductShowPage() {
           <button className="cart-button">Add to Cart</button>
         </div>
         <div className="product-description">
-          {/* The Nike Air Zoom Pegasus 38 delivers responsive cushioning and a secure fit. The mesh upper helps provide durability and breathability, while the Nike Zoom unit helps cushion your stride.  */}
           {product.description}
         </div>
         <div id="breakline"></div>
@@ -110,56 +91,10 @@ function ProductShowPage() {
             </p>
           </button>
 
+          {showReviews && ( <ReviewsIndex />)}
 
-          
-          {showReviews && (
-            <div className="review-dropdown">
-              {reviews.map((review, index) => (
-                <div className="review" key={index}>
-                  <h4>{review.title}</h4>
-                  {/* Render the star ratings based on review.rating */}
-                  <div className="star-ratings">
-                    {/* {Array.from({ length: review.rating }, (_, i) => ( */}
-                      {/* <FaStar className="star filled" />
-                      <FaStar className="star filled" />
-                      <FaStar className="star filled" />
-                      <FaStar className="star filled" />
-                      <FaStar className="star filled" /> */}
-                    {/* ))}
-                    {/* {Array.from({ length: 5 - review.rating }, (_, i) => ( */}
-                      {/* <FaStar  className="star" />
-                      <FaStar  className="star" />
-                      <FaStar  className="star" />
-                      <FaStar  className="star" />
-                      <FaStar  className="star" /> */}
-                    {/* ))} */}
-                    {Array.from({ length: 5 }, (_, i) => (
-                      <FaStar
-                        key={i}
-                        className={`star ${i < review.rating ? 'filled' : ''}`}
-                      />
-                    ))}
-                  </div>
-                  <p>{review.body}</p>
-                    <button className="review-EditButton" >
-                      <IoPencilOutline /> Edit
-                    </button>
-
-                    <button className="review-deleteButton" onClick={() => dispatch(deleteReview(review.id))} >
-                      <BsTrash /> Delete
-                    </button>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
-
-
-
         <div id="breakline"></div>
-        <div className="review-form" >
-            
-        </div>
       </div>
     </div>
     </>

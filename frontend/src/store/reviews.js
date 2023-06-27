@@ -1,13 +1,21 @@
 import csrfFetch from "./csrf";
 import { RECEIVE_PRODUCT } from "./products";
 
+const RECEIVE_REVIEWS = 'reviews/RECEIVE_REVIEWS';
 const RECEIVE_REVIEW = 'reviews/RECEIVE_REVIEW';
 const REMOVE_REVIEW = 'reviews/REMOVE_REVIEW';
+
+export const receiveReviews = (reviews) => {
+  return {
+    type: RECEIVE_REVIEWS,
+    reviews 
+  }
+}
 
 export const receiveReview = (review) => {
   return {
     type: RECEIVE_REVIEW,
-    review
+    review 
   }
 }
 
@@ -17,6 +25,16 @@ const removeReview = (reviewId) => {
       reviewId
   }
 };
+
+// The following are selectors 
+
+export const getReview = (reviewId) => state => {
+  return state.reviews ? state.reviews[reviewId] : null ;
+}
+
+export const getReviews = (state) => {
+  return state.reviews ? Object.values(state.reviews) : [] ;
+}
 
 // export const fetchReview = (reviewId) => async (dispatch) => {
 //   const response = await fetch(`/api/reviews/${reviewId}`);
@@ -28,7 +46,7 @@ const removeReview = (reviewId) => {
 // }
 
 export const createReview = (review) => async (dispatch) => {
-  const response = await fetch('/api/reviews', {
+  const response = await csrfFetch('/api/reviews', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
@@ -56,7 +74,7 @@ export const deleteReview = (reviewId) => async (dispatch) => {
 }
 
 export const updateReview = (review) => async(dispatch) => {
-  const response = await fetch(`/api/reviews${review.id}`, {
+  const response = await csrfFetch(`/api/reviews/${review.id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
@@ -64,8 +82,8 @@ export const updateReview = (review) => async(dispatch) => {
     body: JSON.stringify(review)
   });
   if (response.ok) {
-      const updatedReview = await response.json();
-      dispatch(receiveReview(updatedReview));
+      const data = await response.json();
+      dispatch(receiveReview(data));
   }
 }
 
@@ -73,10 +91,14 @@ const reviewsReducer = (state={}, action) => {
   const nextState = {...state};
 
   switch(action.type) {
-    case RECEIVE_PRODUCT:
+    case RECEIVE_REVIEWS:
       return { ...action.reviews  }
     case RECEIVE_REVIEW:
+      // debugger
       return { ...nextState, [action.review.id]: action.review }
+      case REMOVE_REVIEW:
+        delete nextState[action.reviewId]
+        return nextState;
     default: 
       return state;
   }

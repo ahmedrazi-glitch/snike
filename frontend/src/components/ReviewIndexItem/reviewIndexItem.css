@@ -1,0 +1,65 @@
+.review h4 {
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  width: inherit;
+  height: inherit;
+}
+
+/* The code below is for stars but it is crap and will be deleted */
+
+/* .star {
+  color: #ffffff; /* Set the color inside the star to white */
+  /* border: 1px solid #000000; Set the border color to black 
+} */
+
+/* .star.filled {
+  color: #fbc02d; /* Set the color inside the filled star to your desired color 
+} */
+
+.star-ratings {
+  /* color: #ffffff; Set the color inside the stars to white */
+  display: flex;
+}
+
+.star {
+  color: white; /* Set the border color to black *
+  margin-right: 5px; /* Add spacing between stars */
+}
+
+.star-ratings FaStar {
+  border-color: #000000;
+}
+
+.star.filled {
+  color: #fbc02d; /* Set the color inside the filled stars to your desired color */
+}
+
+/* The code above is for stars but it is crap and will be deleted */
+
+.review p {
+  width: inherit;
+  /* flex-wrap: wrap; */
+  margin-left: 5%;
+  margin-bottom: 3%;
+  display: flex;
+}
+
+.review-EditButton {
+  margin-left: 4%;
+}
+
+.review-deleteButton {
+  margin-left: 6%;
+}
+
+.review-deleteButton:hover {
+  cursor: pointer;
+  color: #000000;
+}
+
+.review-EditButton:hover {
+  cursor: pointer;
+  color: #000000;
+}
+

@@ -1,14 +1,15 @@
 // Export the following action constants and write the corresponding action creators 
+import { receiveReviews } from "./reviews";
 
 export const RECEIVE_PRODUCTS = 'products/RECEIVE_PRODUCTS';
 export const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT';
 
-export const receiveProduct = (payload) => {
+export const receiveProduct = (product) => {
   // debugger
   return {
     type: RECEIVE_PRODUCT,
-    product: payload.product,
-    reviews: payload.reviews
+    product
+    // reviews: payload.reviews
   }
 }
 
@@ -43,8 +44,10 @@ export const fetchProduct = (productId) => async (dispatch) => {
   const res = await fetch(`/api/products/${productId}`);
   if (res) {
     const data = await res.json();
+    // debugger 
     // console.log(data);
-    return dispatch(receiveProduct(data));
+    dispatch(receiveProduct(data.product));
+    dispatch(receiveReviews(data.reviews));
   }
 }
 

@@ -1,0 +1,39 @@
+.review-dropdown {
+  border: 1px solid #ccc;
+  margin-top: 2%;
+  width: 320px;
+  height: 500px;
+  overflow: auto;
+}
+
+.review-item {
+  width: 100% !important; 
+  /* height: 100% !important;  */
+  border: 1px solid #ccc;
+  margin-top: 0%;
+  height: 180px;
+  /* flex-wrap: wrap; */
+  /* overflow: auto; */
+}
+
+.create-review-form-button {
+  margin-top: 5%;
+  margin-left: 2%;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  border: none;
+  width: fit-content;
+  border-bottom: 2px solid #111;
+}
+
+.create-review-form-button:hover {
+  cursor: pointer;
+  color: #757575;
+}
+
+.create-review-form-button-link {
+  background-color: 0 0;
+}
+
