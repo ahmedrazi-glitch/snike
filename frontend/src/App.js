@@ -9,6 +9,7 @@ import ProductShowPage from './components/ProductShowPage/ProductShowPage';
 import BottomBanner from './components/BottomBanner/BottomBanner';
 import SecondNavBar from './components/SecondNavBar/SecondNavBar';
 import ThirdNavBar from './components/ThirdNavBar/thirdNavBar';
+import CartItems from './components/CartItems/CartItems';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
               </Route>
               <Route exact path="/products/:productId">
                 <ProductShowPage/>
+              </Route>
+              <Route exact path="/cart">
+                <CartItems/>
               </Route>
               <Route exact path="/">
                 <Home/>

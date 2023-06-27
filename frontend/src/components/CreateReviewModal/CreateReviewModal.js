@@ -65,37 +65,6 @@ function CreateReviewModal({ onCancel }) {
 
   const handleSubmit = async (e) =>  {
     e.preventDefault();
-    // const errors = validateReview();
-    // if (errors) {
-
-    // setErrors([]);
-
-    // // ... your existing code to create the new review object
-    
-    // try {
-    //   await dispatch(createReview(newReview));
-    //   // Review creation succeeded, perform any necessary actions
-    // } catch (error) {
-    //   let data;
-    //   try {
-    //     if (error.response) {
-    //       data = await error.response.json();
-    //     } else {
-    //       throw new Error('Network response error');
-    //     }
-    //   } catch (e) {
-    //     data = e.message;
-    //   }
-    //   if (data?.errors) {
-    //     setErrors(data.errors);
-    //   } else if (data) {
-    //     setErrors([data]);
-    //   } else {
-    //     setErrors([error.response.statusText]);
-    //   }
-    // }
-
-    // }
     dispatch(createReview(newReview));
     dispatch(onCancel);
   };
@@ -131,15 +100,6 @@ function CreateReviewModal({ onCancel }) {
               ></textarea>
             </div>
             <div className="star-rating">
-              {/* {[1, 2, 3, 4, 5].map((star) => ( */}
-                {/* // <i
-                //   key={star}
-                //   className={`fa-thin fa-star ${
-                //     star <= rating ? "selected" : ""
-                //   }`}
-                  onClick={() => handleRatingChange(star)}
-                ></i> */}
-              {/* // ))} */}
               <div className="editRating" >
                 <label></label>
                 <input type="number" value={rating} onChange={handleRatingChange} required />

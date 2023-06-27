@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :users, only: :create
     resource :session, only: [:show, :create, :destroy]
     resources :products, only: [:index, :show]
+    resources :cart_items, only: [:create, :update, :destroy, :index]
     resources :reviews, only: [:create, :update, :destroy, :index, :show]
+
   end
 
   get '*path', to: "static_pages#frontend_index"

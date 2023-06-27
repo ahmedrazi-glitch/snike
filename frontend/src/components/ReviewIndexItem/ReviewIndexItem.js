@@ -35,21 +35,22 @@ function ReviewIndexItem({review}) {
   return (
     <>
       <div className="review" key={review.id}>
-        <h4>{review.title}</h4>
+        <div className="review-title" >
+          <h4>{review.title}</h4>
+        </div>
         
         <div className="star-ratings">
-          {Array.from({ length: 5 }, (_, i) => (
-            // <i class="fa-thin fa-star" 
-            //   key={i}
-            //   className={`star ${i < review.rating ? 'filled' : ''}`}
-            // ></i>
-            <FaStar
-              key={i}
-              className={`star ${i < review.rating ? 'filled' : ''}`}
-            />
+          {[...Array(review.rating)].map((_, i) => (
+            <i key={i} className="fas fa-star" />
+          ))}
+          {[...Array(5 - review.rating)].map((_, i) => (
+            <i key={i} className="far fa-star" />
           ))}
         </div>
+
+        <div className="review-body">
           <p>{review.body}</p>
+        </div>
 
           {isCurrentUserReview && (
             <>

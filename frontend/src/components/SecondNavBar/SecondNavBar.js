@@ -43,7 +43,9 @@ function SecondNavBar() {
         </div>
 
         <div className="bag-container" >
-          <i  id="bag" class="fas fa-shopping-bag"></i>
+          <Link to={`/cart`}>
+            <i  id="bag" class="fas fa-shopping-bag"></i>
+          </Link>
         </div>
 
       </div>
