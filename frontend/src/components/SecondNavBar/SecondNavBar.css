@@ -35,7 +35,39 @@ img#logo {
   justify-content: space-around;
   font-size: 25px;
   cursor: pointer; 
+  /* cutomise the code below after the project is comelpete */
+  margin-right: 20%;
 }
+
+/* The code below is for search bar  */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-right: 10%;
+}
+
+.search-bar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+/* .search-bar button {
+  padding: 3px 8px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} */
+
+.search-bar button:hover {
+  background-color: #45a049;
+}
+
+/* The code above is for search bar  */
 
 /* All code below is for the category buttons  */
 

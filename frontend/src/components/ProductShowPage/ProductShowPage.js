@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { createCartItem } from "../../store/cartItems";
 import { useParams } from "react-router-dom";
 import { fetchProduct, getProduct } from "../../store/products";
 import ReviewsIndex from "../ReviewsIndex/ReviewsIndex";
@@ -9,12 +11,15 @@ import './productShowPage.css';
 
 function ProductShowPage() {
   const dispatch = useDispatch();
+  const currentUser = useSelector(state => state.session.user);
   const [selectedSize, setSelectedSize] = useState(null);
   const [size, setSize] = useState("");
   const [showReviews, setShowReviews] = useState(false);
   const { productId } = useParams();
   const product = useSelector(getProduct(productId));
   const reviews = useSelector(state => Object.values(state.reviews));
+
+  console.log(product.sizes);
 
 
   const sizeButtons = [];
@@ -28,11 +33,22 @@ function ProductShowPage() {
     dispatch(fetchProduct(productId));
   }, []);
 
-
-
   const handleSizeClick = (size) => {
     setSelectedSize(size);
   };
+
+  const handleCartClick = (e) => {
+    e.preventDefault();
+
+    const cartItem = {
+      user_id: currentUser.id,
+      product_id: productId,
+      options: selectedSize,
+      quantity: 1
+    };
+
+    dispatch(createCartItem(cartItem));
+  }
 
   const toggleShowReviewIndex = () => {
     setShowReviews(!showReviews);
@@ -74,7 +90,19 @@ function ProductShowPage() {
         <br/>
         <br/>
         <div className="add-to-cart">
-          <button className="cart-button">Add to Cart</button>
+          {currentUser  
+          ?
+          <Link className="cart-button-link">
+            <button className="cart-button" onClick={handleCartClick}>
+              Add to Cart
+            </button>
+          </Link> 
+            :
+          <Link to='/login' >
+            <button className="cart-button" >
+              Add to Cart
+            </button>
+          </Link>}
         </div>
         <div className="product-description">
           {product.description}

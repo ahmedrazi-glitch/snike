@@ -51,6 +51,16 @@ export const fetchProduct = (productId) => async (dispatch) => {
   }
 }
 
+export const fetchSearchResults = (searchTerm) => async (dispatch) => {
+  // debugger
+  const response = await fetch(`/api/products/search?query=${searchTerm}`);
+  if (response.ok) {
+    const data = await response.json();
+    // debugger
+    dispatch(receiveProducts(data));
+  }
+};
+
 const productsReducer = (state={}, action) => {
   const nextState = {...state};
   // let nextState;
@@ -58,7 +68,8 @@ const productsReducer = (state={}, action) => {
   switch(action.type) {
     case RECEIVE_PRODUCTS:
       // debugger
-      return { ...nextState, ...action.products }
+      // return { ...nextState, ...action.products }
+      return action.products;
     case RECEIVE_PRODUCT:
       // debugger
       return { ...nextState, [action.product.id]: action.product }

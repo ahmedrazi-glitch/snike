@@ -1,0 +1,34 @@
+.cart-items-container {
+  /* border: 1px solid black; */
+  height: 180px;
+  /* overflow: auto; */
+}
+
+.shopping-summary {
+  /* border: 1px solid blue; */
+  height: 10%;
+}
+
+.cart-item-container {
+  width: 25%;
+  height: 180px;
+  margin-left: 15%;
+  /* border: 1px solid red; */
+  /* overflow: auto; */
+  flex-direction: row;
+} 
+
+.cart-item-photo img {
+  width: 25%;
+  height: 25%;
+}
+
+.quantity {
+  flex-direction: row;
+}
+
+#trash-button-to-delete-cart-item {
+  cursor: pointer;
+  width: 5%;
+  height: 5%;
+}

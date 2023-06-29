@@ -12,11 +12,11 @@ export const receiveCartItems = (cartItems) => {
   }
 }
 
-export const receiveCartItem = (cartItem) => {
+export const receiveCartItem = (data) => {
   // debugger
   return {
     type: RECIEVE_CART_ITEM,
-    cartItem
+    data
   }
 }
 
@@ -33,7 +33,7 @@ export const getCartItem = (cartItemId) => state => {
 }
 
 export const getCartItems = (state) => {
-  return state.cartItems ? Object.values(state.cartItems) : [] ;
+  return state.cart ? Object.values(state.cart) : [] ;
 }
 
 export const fetchCartItems = () => async(dispatch) => {
@@ -46,13 +46,13 @@ export const fetchCartItems = () => async(dispatch) => {
 export const fetchCartItem = (cartItemId) => async (dispatch) => {
   const response = await fetch(`/api/cart_items/${cartItemId}`);
   if (response.ok) {
-      const cartItem = await response.json();
-      dispatch(receiveCartItem(cartItem));
+    const cartItem = await response.json();
+    dispatch(receiveCartItem(cartItem));
   }
 }
 
 export const createCartItem = (cartItem) => async (dispatch) => {
-  const response = await csrfFetch('/api/create_items', {
+  const response = await csrfFetch('/api/cart_items', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
@@ -61,8 +61,9 @@ export const createCartItem = (cartItem) => async (dispatch) => {
   });
 
   if (response.ok) {
-    const newItem = await response.json();
-    dispatch(receiveCartItem(newItem));
+    // debugger
+    const data = await response.json();
+    dispatch(receiveCartItem(data));
   } else {
     const errors = await response.json();
     return errors;
@@ -79,7 +80,7 @@ export const updateCartItem = (cartItem) => async(dispatch) => {
   });
   if (response.ok) {
       const cartItem = await response.json();
-      dispatch(cartItem(cartItem));
+      dispatch(receiveCartItem(cartItem));
   }
 }
 
@@ -101,7 +102,7 @@ const cartItemsReducer = (state={}, action) => {
       return { ...action.cartItems  }
     case RECIEVE_CART_ITEM:
       // debugger
-      return { ...nextState, [action.cartItem.id]: action.cartItem }
+      return { ...nextState, [action.data.cartItem.id]: action.data.cartItem }
       case REMOVE_CART_ITEM:
         delete nextState[action.cartItemId]
         return nextState;
