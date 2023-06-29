@@ -13,19 +13,21 @@ function ProductShowPage() {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.session.user);
   const [selectedSize, setSelectedSize] = useState(null);
-  const [size, setSize] = useState("");
+  // const [size, setSize] = useState("");
   const [showReviews, setShowReviews] = useState(false);
   const { productId } = useParams();
   const product = useSelector(getProduct(productId));
   const reviews = useSelector(state => Object.values(state.reviews));
+  // const [cartButtonClicked, setCartButtonClicked] = useState(false);
+  const [errors, setErrors] = useState([]);
 
-  console.log(product.sizes);
+  // console.log(product.sizes);
 
 
   const sizeButtons = [];
   for (let i = 0; i < 17; i++) {
-    const size = i * 0.5 + 6;
-    sizeButtons.push(size);
+    const sizeForButtons = i * 0.5 + 6;
+    sizeButtons.push(sizeForButtons);
   }
 
   useEffect(() => {
@@ -38,6 +40,7 @@ function ProductShowPage() {
   };
 
   const handleCartClick = (e) => {
+    // setCartButtonClicked(true);
     e.preventDefault();
 
     const cartItem = {
@@ -47,7 +50,20 @@ function ProductShowPage() {
       quantity: 1
     };
 
-    dispatch(createCartItem(cartItem));
+    if (setSelectedSize === null) {
+      // const setSelectedSize = '6';
+      // dispatch(createCartItem(() => {
+      //   const cartItem = {
+      //     user_id: currentUser.id,
+      //     product_id: productId,
+      //     options: selectedSize,
+      //     quantity: 1
+      //   };
+      // }));
+      setErrors(['Please select a size.']);
+    } else {
+      dispatch(createCartItem(cartItem));
+    }
   }
 
   const toggleShowReviewIndex = () => {
@@ -103,6 +119,7 @@ function ProductShowPage() {
               Add to Cart
             </button>
           </Link>}
+          {errors.map(error => <li key={error}>{error}</li>)}
         </div>
         <div className="product-description">
           {product.description}

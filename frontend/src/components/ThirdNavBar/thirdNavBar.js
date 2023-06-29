@@ -24,7 +24,7 @@ function ThirdNavBar() {
   }, [messages.length]);
 
   return (
-    <div className="slideshow-container">
+    <div className="slideshow-container" style={{ backgroundColor: 'ultralight gray' }}>
       {/* {messages.map((message, index) => (
         <div
           className={`slideshow-message ${

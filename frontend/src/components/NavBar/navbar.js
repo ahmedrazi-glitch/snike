@@ -31,7 +31,7 @@ function Navigation() {
   if (sessionUser) {
     return (
       <>
-        <div className="navbar" style={{ backgroundColor: 'lightgray' }}>
+        <div className="navbar">
           <ul className="navbar-menu">
             {sessionActions.login ? (
               <>

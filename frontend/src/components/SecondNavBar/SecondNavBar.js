@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import ProductsIndexPage from '../ProductsIndexPage/ProductsIndexPage';
 import { fetchSearchResults } from "../../store/products";
-import { FaSearch } from 'react-icons/fa';
+import { FiSearch } from 'react-icons/fi';
 import "./SecondNavBar.css";
 
 
@@ -32,7 +32,7 @@ function SecondNavBar() {
     <>
       <div className="second-nav-bar" style={{ backgroundColor: 'white' }}>
 
-        <div className="logo" >
+        <div className="logo-container" >
           <Link to="/" >
             <img id="logo" src="https://pngimg.com/uploads/nike/nike_PNG11.png"/>
           </Link>
@@ -57,27 +57,29 @@ function SecondNavBar() {
         </div>
 
         <div className="bag-container" >
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <Link onClick={handleSearch} to={`/search/${searchQuery}`} >
-            <FaSearch />
-          </Link>
-          
-        </div>
-          {currentUser ? 
-            <Link to={`/cart`}>
-              <i  id="bag" class="fas fa-shopping-bag"></i>
+          <div className="search-bar">
+            <Link onClick={handleSearch} to={`/search/${searchQuery}`} >
+              <button id="search-button" ><FiSearch /></button>
             </Link>
-            :
-            <Link to={`/login`}>
-              <i  id="bag" class="fas fa-shopping-bag"></i>
-            </Link>
-          }
+            <input
+              id="search-input"
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+          <div className="bag-icon" >
+            {currentUser ? 
+              <Link to={`/cart`}>
+                <i  id="bag" class="fas fa-shopping-bag"></i>
+              </Link>
+              :
+              <Link to={`/login`}>
+                <i  id="bag" class="fas fa-shopping-bag"></i>
+              </Link>
+            }
+          </div>
         </div>
 
       </div>

@@ -23,7 +23,8 @@
   background-color: #fff;
   text-align: left;
   margin-bottom: 30px;
-  margin-left: 5%;
+  /* margin-left: 5%; This was the old setting when there was a side component for filters */
+  margin-left: 12%;
 }
 
 .actual-link {

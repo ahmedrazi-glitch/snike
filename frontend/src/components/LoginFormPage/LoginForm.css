@@ -1,19 +1,30 @@
+.login-form-container {
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
 .signIn-header-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 2%;
 }
 
-.logo {
+.signIn-header-container img {
+  margin-bottom: 2%;
   width: 100px;
   height: 50px;
-  margin-bottom: 20px;
   margin-top: 20px;
   margin-left: -25%;
 }
 
-h1.header {
+.signIn-header-container h1 {
+  font-size: 28px;
+  font-weight: normal;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.login-header {
   font-weight: lighter; 
 }
 

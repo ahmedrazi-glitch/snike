@@ -24,7 +24,7 @@ function ProductIndexPage() {
   return (
     <div className='page-wrapper' >
       <div className="product-index-page">
-        <CategoryComponent/>
+        {/* <CategoryComponent/> */}
         <div className="products-container">
           {products.map((product, index) => (
             <Link className='actual-link' to={`/products/${product.id}`}>
