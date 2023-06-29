@@ -58,16 +58,19 @@ function SecondNavBar() {
 
         <div className="bag-container" >
           <div className="search-bar">
-            <Link onClick={handleSearch} to={`/search/${searchQuery}`} >
+            {/* <Link onClick={handleSearch} to={`/search/${searchQuery}`} >
+              
+            </Link> */}
+            <form onSubmit={handleSearch} >
               <button id="search-button" ><FiSearch /></button>
-            </Link>
-            <input
-              id="search-input"
-              type="text"
-              placeholder="Search..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
+              <input
+                id="search-input"
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </form>
           </div>
           <div className="bag-icon" >
             {currentUser ? 

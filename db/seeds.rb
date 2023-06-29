@@ -20,10 +20,11 @@ require "open-uri"
 
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
+  ApplicationRecord.connection.reset_pk_sequence!('cart_items')
   ApplicationRecord.connection.reset_pk_sequence!('reviews')
   ApplicationRecord.connection.reset_pk_sequence!('products')
   ApplicationRecord.connection.reset_pk_sequence!('users')
-  ApplicationRecord.connection.reset_pk_sequence!('cart_items')
+  
   
   
 
@@ -297,6 +298,151 @@ require "open-uri"
   )
 
   c9.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/classic9.webp'), filename: 'c9Photo')
+
+  w1 = Product.create!( 
+    name: 'Nike Pro Leggings Womens', 
+    description: 'The Nike Pro Leggings are made with sweat-wicking fabric that and mesh across the calves to keep you cool and dry. These are the perfect bottoms.',
+    category: 'Womens',
+    size: 'M',
+    color: 'Black',
+    price: 155.60
+  )
+
+  w1.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/womens1.webp'), filename: 'w1Photo')
+
+  w2 = Product.create!( 
+    name: 'Nike Sportswear Everyday Modern Top', 
+    description: 'Offering the warm, heavier feel of your favorite sweatshirt, this mock-neck top is a cozy option you can count on to keep you comfortable on crisp, breezy days.',
+    category: 'Womens',
+    size: 'M',
+    color: 'Brown',
+    price: 115.60
+  )
+
+  w2.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/womens2.jpeg'), filename: 'w2Photo')
+
+  w3 = Product.create!( 
+    name: 'Nike Go FlyEase', 
+    description: 'Ditch the laces and get outside. These kicks feature Nikes revolutionary FlyEase technology, making on-and-off a breeze.',
+    category: 'Womens',
+    size: 'M',
+    color: 'Black',
+    price: 125.60
+  )
+
+  w3.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/womens3.webp'), filename: 'w3Photo')
+
+  w4 = Product.create!( 
+    name: 'Nike Sportswear Phoenix Fleece Bottoms', 
+    description: 'Rise up and transform your fleece wardrobe with strong cozy vibes. The extra-long, wide leg and hem vents of these Phoenix Fleece pants let you show off your favorite shoes while taller ribbing at the waist.',
+    category: 'Womens',
+    size: 'M',
+    color: 'Purple',
+    price: 110.60
+  )
+
+  w4.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/womens4.webp'), filename: 'w4Photo')
+
+  k1 = Product.create!( 
+    name: 'Nike Sportswear Tech Fleece Kids', 
+    description: 'Make the most of chilly days by pulling on this premium fleece full-zip hoodie. Warm? Check. Soft? Check. No-bulk feel? Double check.',
+    category: 'Kids',
+    size: 'S',
+    color: 'Pink',
+    price: 109.60
+  )
+
+  k1.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/kids1.webp'), filename: 'k1Photo')
+
+  k2 = Product.create!( 
+    name: 'Nike Force 1 LE Kids', 
+    description: 'This is what legends are made of. The Nike Force 1 LE brings back the 82 hardwood icon into an everyday style in all-white or all-black.',
+    category: 'Kids',
+    size: 'S',
+    color: 'White',
+    price: 89.60
+  )
+
+  k2.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/kids2.webp'), filename: 'k2Photo')
+
+  k3 = Product.create!( 
+    name: 'Nike Sportswear Club Fleece Kids', 
+    description: 'The Nike Sportswear Club Fleece Hoodie is a classic everyday sweatshirt thats soft and warm for all-day play. Lightweight fleece fabric keeps little ones warm and is easy to layer.',
+    category: 'Kids',
+    size: 'S',
+    color: 'Black',
+    price: 89.60
+  )
+
+  k3.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/kids3.webp'), filename: 'k3Photo')
+
+  k4 = Product.create!( 
+    name: 'Nike Flex Runner 2', 
+    description: 'Whosz ready to play? The Nike Flex Runner 2 is built for the kiddo on the go who loves to play—from the playground to wherever their day takes them. Its laces-free! Meaning its super quick to slip on and off. ',
+    category: 'Kids',
+    size: 'S',
+    color: 'Black',
+    price: 45.60
+  )
+
+  k4.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/kids4.webp'), filename: 'k4Photo')
+
+  access1 = Product.create!( 
+    name: 'Nike Club', 
+    description: 'A classic mid-depth cap with plenty of styling options, this Nike Club Cap comes in smooth cotton twill that has a soft wash for easy comfort from day 1.',
+    category: 'Accessories',
+    size: 'S',
+    color: 'White',
+    price: 26.60
+  )
+
+  access1.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/access1.webp'), filename: 'access1Photo')
+
+  access2 = Product.create!( 
+    name: 'Nike Peak', 
+    description: 'Our Nike Peak beanie gives you stylish options to help conquer the cold. Plush knit yarns hug your head for comfort that lasts all day. Cut with plenty of fabric, the Peak beanie.',
+    category: 'Accessories',
+    size: 'S',
+    color: 'Blue',
+    price: 28.60
+  )
+
+  access2.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/access2.webp'), filename: 'access2Photo')
+
+  access3 = Product.create!( 
+    name: 'Nike Recharge', 
+    description: 'From your workout to the trail, this bottle makes hydration effortless. The vacuum-insulated stainless steel keeps your liquids cold, and its twist-off cap makes rehydrating a breeze. Take this bottle with you anywhere, it can handle it—a durable, scratch-resistant finish and a leak-resistant lid.',
+    category: 'Accessories',
+    size: 'S',
+    color: 'Black',
+    price: 36.60
+  )
+
+  access3.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/access3.webp'), filename: 'access3Photo')
+
+  access4 = Product.create!( 
+    name: 'Nike Hoops Elite Pro', 
+    description: 'Lets talk about this backpack. Inspired by Nikes rebellious legends, this backpack makes a statement both in its design and its storage capacity. Its also just a great bag for anyone who wants plenty of pockets and an organization system that will leave you wondering why you didnt get it years ago. ',
+    category: 'Accessories',
+    size: 'S',
+    color: 'Blue',
+    price: 87.60
+  )
+
+  access4.photo.attach(io: URI.open('https://snike-dev.s3.us-west-1.amazonaws.com/access4.webp'), filename: 'access4Photo')
+
+
+  Product.all.map do |product| 
+    2.times do 
+      Review.create!(
+        title: Faker::Lorem.sentence(word_count: 6),
+        user_id: User.all.sample.id,
+        product_id: Product.all.sample.id,
+        rating: Faker::Number.between(from: 1, to: 5),
+        body: Faker::Lorem.paragraph
+      )
+    end
+  end
 
   # More users
 
