@@ -18,7 +18,7 @@ function ProductIndexPage() {
     } else {
       dispatch(fetchProducts());
     }
-  }, []);
+  }, [window.location.pathname]);
 
 
   return (
