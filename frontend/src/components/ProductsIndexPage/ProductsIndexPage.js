@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProducts, fetchProducts, fetchSearchResults } from '../../store/products';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import CategoryComponent from '../CategoryComponent/CategoryComponent.js';
+// import CategoryComponent from '../CategoryComponent/CategoryComponent.js';
 import './productsIndexPage.css';
 
 function ProductIndexPage() {
@@ -13,9 +13,8 @@ function ProductIndexPage() {
 
   useEffect(() => {
     const arr = window.location.pathname.split('/');
-    if (arr.includes('search')) {
-      dispatch(fetchSearchResults(params));
-    } else {
+    if (!arr.includes('search')) {
+      // dispatch(fetchSearchResults(params));
       dispatch(fetchProducts());
     }
   }, [window.location.pathname]);

@@ -4,21 +4,23 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import ProductsIndexPage from '../ProductsIndexPage/ProductsIndexPage';
 import { fetchSearchResults } from "../../store/products";
+import { useHistory } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
 import "./SecondNavBar.css";
 
 
 function SecondNavBar() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const currentUser = useSelector(state => state.session.user);
 
   const [activeCategory, setActiveCategory] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const handleSearch = () => {
-    // Perform search logic here
-    // console.log('Search query:', searchQuery);
+  const handleSearch = (e) => {
+    e.preventDefault();
     dispatch(fetchSearchResults(searchQuery));
+    history.push(`/search/${searchQuery}`);
     // Clear search query
     setSearchQuery('');
   };
@@ -58,10 +60,7 @@ function SecondNavBar() {
 
         <div className="bag-container" >
           <div className="search-bar">
-            {/* <Link onClick={handleSearch} to={`/search/${searchQuery}`} >
-              
-            </Link> */}
-            <form onSubmit={handleSearch} >
+            <form className="search-bar" onSubmit={handleSearch} >
               <button id="search-button" ><FiSearch /></button>
               <input
                 id="search-input"

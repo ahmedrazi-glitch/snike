@@ -34,7 +34,6 @@ export const getProducts = (state) => {
 // The following are thunk action creators 
 
 export const fetchProducts = () => async(dispatch) => {
- 
   const res = await fetch('/api/products');
   const products = await res.json();
   return dispatch(receiveProducts(products));
@@ -55,6 +54,7 @@ export const fetchSearchResults = (searchTerm) => async (dispatch) => {
   // debugger
   const response = await fetch(`/api/products/search?query=${searchTerm}`);
   if (response.ok) {
+    // debugger
     const data = await response.json();
     // debugger
     dispatch(receiveProducts(data));

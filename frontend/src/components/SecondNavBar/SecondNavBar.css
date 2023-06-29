@@ -51,6 +51,7 @@ img#logo {
 
 .search-bar {
   display: flex;
+  flex-direction: row;
   align-items: center;
   width: 275px;
   background-color: #f8f8f8;
@@ -73,6 +74,7 @@ img#logo {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-left: 2%;
 }
 
 #search-input {

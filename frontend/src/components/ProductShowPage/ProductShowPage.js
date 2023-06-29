@@ -40,7 +40,6 @@ function ProductShowPage() {
   };
 
   const handleCartClick = (e) => {
-    // setCartButtonClicked(true);
     e.preventDefault();
 
     const cartItem = {
@@ -50,16 +49,7 @@ function ProductShowPage() {
       quantity: 1
     };
 
-    if (setSelectedSize === null) {
-      // const setSelectedSize = '6';
-      // dispatch(createCartItem(() => {
-      //   const cartItem = {
-      //     user_id: currentUser.id,
-      //     product_id: productId,
-      //     options: selectedSize,
-      //     quantity: 1
-      //   };
-      // }));
+    if (selectedSize === null) {
       setErrors(['Please select a size.']);
     } else {
       dispatch(createCartItem(cartItem));

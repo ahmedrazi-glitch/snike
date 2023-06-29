@@ -24,6 +24,9 @@ function App() {
               <Route exact path="/products/mens">
                 <ProductIndexPage/>
               </Route>
+              <Route exact path="/categories/:category">
+                <ProductIndexPage/>
+              </Route>
               <Route exact path="/signup">
                 <SignupFormPage />
               </Route>
