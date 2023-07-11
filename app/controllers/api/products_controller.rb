@@ -1,8 +1,10 @@
 class Api::ProductsController < ApplicationController
 
   def index
+    query=params[:category]
     if params[:category]
-      @products = Product.where('SQL Query to get category = params[:category]')
+      # @products = Product.where('SQL Query to get category = params[:category]')
+      Product.where('category ILIKE ?', "%#{query}%")
     else 
       @products = Product.all
       render :index

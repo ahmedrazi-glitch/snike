@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts, fetchProducts, fetchSearchResults } from '../../store/products';
+import { getProducts, fetchProducts, fetchSearchResults, fetchCategoryProducts } from '../../store/products';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 // import CategoryComponent from '../CategoryComponent/CategoryComponent.js';
@@ -16,6 +16,8 @@ function ProductIndexPage() {
     if (!arr.includes('search')) {
       // dispatch(fetchSearchResults(params));
       dispatch(fetchProducts());
+    } else if (arr.includes('all')) {
+      dispatch(fetchCategoryProducts('all'));
     }
   }, [window.location.pathname]);
 

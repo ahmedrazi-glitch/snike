@@ -39,6 +39,12 @@ export const fetchProducts = () => async(dispatch) => {
   return dispatch(receiveProducts(products));
 }
 
+export const fetchCategoryProducts = (categoryTerm) => async(dispatch) => {
+  const res = await fetch(`/api/products?category=${categoryTerm}`);
+  const categoryProducts = await res.json();
+  return dispatch(receiveProducts(categoryProducts));
+}
+
 export const fetchProduct = (productId) => async (dispatch) => {
   const res = await fetch(`/api/products/${productId}`);
   if (res) {

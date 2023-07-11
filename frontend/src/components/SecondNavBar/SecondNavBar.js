@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import ProductsIndexPage from '../ProductsIndexPage/ProductsIndexPage';
-import { fetchSearchResults } from "../../store/products";
+import { fetchSearchResults, fetchCategoryProducts, fetchProducts } from "../../store/products";
 import { useHistory } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
 import "./SecondNavBar.css";
@@ -29,6 +29,13 @@ function SecondNavBar() {
     setActiveCategory(category);
   };
 
+  const handleNewAndFeatured = (e) => {
+    e.preventDefault();
+    dispatch(fetchProducts());
+  }
+
+
+
 
   return (
     <>
@@ -45,6 +52,7 @@ function SecondNavBar() {
           <div className="category-buttons">
 
             <Link to={`/products/all`} className="all-category-button"> New&nbsp;&&nbsp;Featured </Link>
+            {/* <button className="all-category-button" onClick={() => handleNewAndFeatured('mens')} >New&nbsp;&&nbsp;Featured</button> */}
           
             <Link to={`/products/mens`} className="men-category-button"> Men </Link> 
 
