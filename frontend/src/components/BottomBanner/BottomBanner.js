@@ -42,7 +42,7 @@ function BottomBanner() {
         <a id="github" className="icon" target="_blank" href="https://github.com/ahmedrazi-glitch" rel="noreferrer">
           <FaGithub size={30} />
         </a>
-        <a id="linkedin" className="icon" target="_blank" href="https://www.example.com" rel="noreferrer">
+        <a id="linkedin" className="icon" target="_blank" href="https://www.linkedin.com/in/raziahmed96/" rel="noreferrer">
           <FaLinkedin size={30} />
         </a>
           </div>

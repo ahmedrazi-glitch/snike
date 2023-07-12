@@ -120,11 +120,11 @@ function SignupFormPage() {
           </label> */}
         </div>
 
-        <div className="checkbox-group">
+        {/* <div className="checkbox-group">
           <input type="checkbox" id="terms" />
           <label htmlFor="terms">I Agree to Snike's <a className="PP" >Privacy Policy</a> and <a className="TOU">Terms of Use.</a>
           </label>
-        </div>
+        </div> */}
         <div className="button-container">
           <button type="submit" className="submit-button">
             Create Account

@@ -80,35 +80,35 @@ input::placeholder {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
 }
 
-.checkbox-group {
+/* .checkbox-group {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
   font-size: 3.5rem;
   font: inherit;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
+} */
 
-.PP {
+/* .PP {
   cursor: pointer;
   text-decoration: underline;
   font-weight: bold;
-}
+} */
 
-.TOU {
+/* .TOU {
   cursor: pointer;
   text-decoration: underline;
   font-weight: bold;
-}
+} */
 
-.checkbox-group label {
+/* .checkbox-group label {
   margin-left: 5px;
-}
+} */
 
 /* The code below is for making changes to the checkbox.  */
 
 
-.checkbox-group input[type="checkbox"] {
+/* .checkbox-group input[type="checkbox"] {
   transform: scale(1.5);
   margin-right: 5px;
   cursor: pointer;
@@ -124,19 +124,19 @@ input::placeholder {
 
 .checkbox-group input[type="checkbox"]:checked {
   cursor: pointer;
-}
+} */
 
 /* .checkbox-group input[type="checkbox"]:checked + label {
   font-weight: bold;
 } */
 
-.checkbox-group input[type="checkbox"]:focus {
+/* .checkbox-group input[type="checkbox"]:focus {
   outline: none;
 }
 
 .checkbox-group input[type="checkbox"]:focus-visible {
   outline: 2px solid blue;
-}
+} */
 
 
 
