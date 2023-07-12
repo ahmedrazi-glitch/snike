@@ -15,6 +15,7 @@ function ReviewsIndex() {
   const currentUser = useSelector(state => state.session.user);
 
   const handleCreateClick = () => {
+    // debugger
     setShowModal(true);
   };
 

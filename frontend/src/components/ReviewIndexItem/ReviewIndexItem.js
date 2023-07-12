@@ -40,10 +40,16 @@ function ReviewIndexItem({review}) {
         </div>
         
         <div className="star-ratings">
-          {[...Array(review.rating)].map((_, i) => (
+          {/* {[...Array(review.rating)].map((_, i) => (
             <i key={i} className="fas fa-star" />
           ))}
           {[...Array(5 - review.rating)].map((_, i) => (
+            <i key={i} className="far fa-star" />
+          ))} */}
+          {Array.from({ length: review.rating }, (_, i) => (
+            <i key={i} className="fas fa-star" />
+          ))}
+          {Array.from({ length: 5 - review.rating }, (_, i) => (
             <i key={i} className="far fa-star" />
           ))}
         </div>

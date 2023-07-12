@@ -65,6 +65,7 @@ function CreateReviewModal({ onCancel }) {
 
   const handleSubmit = async (e) =>  {
     e.preventDefault();
+    // debugger
     dispatch(createReview(newReview));
     dispatch(onCancel);
   };
