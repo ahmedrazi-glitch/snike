@@ -16,9 +16,15 @@ function ProductIndexPage() {
     if (!arr.includes('search')) {
       // dispatch(fetchSearchResults(params));
       dispatch(fetchProducts());
-    } else if (arr.includes('all')) {
-      dispatch(fetchCategoryProducts('all'));
-    }
+    } else if (arr.includes('Kids')) {
+      dispatch(fetchCategoryProducts('Kids'));
+    } else if (arr.includes('Mens')) {
+      dispatch(fetchCategoryProducts('Mens'));
+    } else if (arr.includes('Accessories')) {
+      dispatch(fetchCategoryProducts('Accessories'));
+    } else if (arr.includes('Womens')) {
+      dispatch(fetchCategoryProducts('Womens'));
+    } 
   }, [window.location.pathname]);
 
 

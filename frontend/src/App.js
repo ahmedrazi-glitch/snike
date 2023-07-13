@@ -21,12 +21,12 @@ function App() {
               <Route exact path="/login">
                 <LoginFormPage />
               </Route>
-              <Route exact path="/products/mens">
+              <Route exact path="/products">
                 <ProductIndexPage/>
               </Route>
-              {/* <Route exact path="/category/:category">
+              <Route exact path="/products/category">
                 <ProductIndexPage/>
-              </Route> */}
+              </Route>
               <Route exact path="/signup">
                 <SignupFormPage />
               </Route>

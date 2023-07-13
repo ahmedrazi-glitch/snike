@@ -4,10 +4,12 @@ import { receiveReviews } from "./reviews";
 export const RECEIVE_PRODUCTS = 'products/RECEIVE_PRODUCTS';
 export const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT';
 
+// export const receiveProduct = (data) => {
 export const receiveProduct = (product) => {
   // debugger
   return {
     type: RECEIVE_PRODUCT,
+    // data
     product
     // reviews: payload.reviews
   }
@@ -43,6 +45,8 @@ export const fetchCategoryProducts = (categoryTerm) => async(dispatch) => {
   const res = await fetch(`/api/products?category=${categoryTerm}`);
   const categoryProducts = await res.json();
   return dispatch(receiveProducts(categoryProducts));
+  // const data = await res.json();
+  // return dispatch(receiveProducts(data));
 }
 
 export const fetchProduct = (productId) => async (dispatch) => {

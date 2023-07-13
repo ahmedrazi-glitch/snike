@@ -27,12 +27,17 @@ function SecondNavBar() {
 
   const handleCategoryClick = (category) => {
     setActiveCategory(category);
+    // dispatch(fetchCategoryProducts(category));
+    // history.push(`/products/category`)
+    history.push(`/search/${category}`);
   };
 
   const handleNewAndFeatured = (e) => {
-    e.preventDefault();
-    dispatch(fetchProducts());
+    // e.preventDefault();
+    // dispatch(fetchProducts());
+    history.push(`/products`);
   }
+
 
 
 
@@ -51,18 +56,25 @@ function SecondNavBar() {
         <div className="nav-links-container">
           <div className="category-buttons">
 
-            <Link to={`/products/all`} className="all-category-button"> New&nbsp;&&nbsp;Featured </Link>
-            {/* <button className="all-category-button" onClick={() => handleNewAndFeatured('mens')} >New&nbsp;&&nbsp;Featured</button> */}
+            {/* <Link to={`/products/all`} className="all-category-button"> New&nbsp;&&nbsp;Featured </Link> */}
+            <button className="all-category-button" onClick={() => handleNewAndFeatured()} >New&nbsp;&&nbsp;Featured</button>
           
-            <Link to={`/products/mens`} className="men-category-button"> Men </Link> 
+            {/* <Link to={`/products/mens`} className="men-category-button"> Men </Link>  */}
+            <button className="all-category-button" onClick={() => handleCategoryClick('Mens')} > Mens </button>
 
-            <Link to={`/products/womens`} className="women-category-button"> Women </Link>
+            {/* <Link to={`/products/womens`} className="women-category-button"> Women </Link> */}
+            <button className="all-category-button" onClick={() => handleCategoryClick('Womens')} > Womens </button>
 
-            <Link to={`/products/kids`} className="kids-category-button"> Kids </Link>
+            {/* <Link to={`/products/kids`} className="kids-category-button"> Kids </Link> */}
+            <button className="all-category-button" onClick={() => handleCategoryClick('Kids')} > Kids </button>
         
-            <Link to="/search?q=Accessories" className="access-category-button" > Accessories </Link>  
+            {/* <Link to={`/products/accessories`} className="access-category-button" > Accessories </Link>   */}
+            <button className="all-category-button" onClick={() => handleCategoryClick('Accessories')} > Accessories </button>
 
-            <Link to={`/products/sale`} className="sale-category-button"> Sale </Link>
+            {/* <Link to={`/products/sale`} className="sale-category-button"> Sale </Link> */}
+            <button className="all-category-button" onClick={() => handleNewAndFeatured()} > Sale </button>
+
+
           </div>
         </div>
 
