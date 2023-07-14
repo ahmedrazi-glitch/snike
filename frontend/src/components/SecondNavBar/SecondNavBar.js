@@ -38,10 +38,6 @@ function SecondNavBar() {
     history.push(`/products`);
   }
 
-
-
-
-
   return (
     <>
       <div className="second-nav-bar" style={{ backgroundColor: 'white' }}>
@@ -94,11 +90,11 @@ function SecondNavBar() {
           <div className="bag-icon" >
             {currentUser ? 
               <Link to={`/cart`}>
-                <i  id="bag" class="fas fa-shopping-bag"></i>
+                <i  id="bag" class="fas fa-shopping-bag" ></i>
               </Link>
               :
               <Link to={`/login`}>
-                <i  id="bag" class="fas fa-shopping-bag"></i>
+                <i  id="bag" class="fas fa-shopping-bag" ></i>
               </Link>
             }
           </div>

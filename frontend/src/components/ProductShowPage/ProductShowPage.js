@@ -22,7 +22,7 @@ function ProductShowPage() {
   const [errors, setErrors] = useState([]);
 
   // console.log(product.sizes);
-
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const sizeButtons = [];
   for (let i = 0; i < 17; i++) {
@@ -37,6 +37,7 @@ function ProductShowPage() {
 
   const handleSizeClick = (size) => {
     setSelectedSize(size);
+    setErrors([]);
   };
 
   const handleCartClick = (e) => {
@@ -53,8 +54,20 @@ function ProductShowPage() {
       setErrors(['Please select a size.']);
     } else {
       dispatch(createCartItem(cartItem));
+      setShowSuccessMessage(true);
     }
   }
+
+  useEffect(() => {
+    // Clear success message after a certain duration
+    if (showSuccessMessage) {
+      const timeoutId = setTimeout(() => {
+        setShowSuccessMessage(false); // Hide success message
+      }, 2000);
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [showSuccessMessage]);
 
   const toggleShowReviewIndex = () => {
     setShowReviews(!showReviews);
@@ -100,16 +113,24 @@ function ProductShowPage() {
           ?
           <Link className="cart-button-link">
             <button className="cart-button" onClick={handleCartClick}>
-              Add to Cart
+              Add to Bag
             </button>
           </Link> 
             :
           <Link to='/login' >
             <button className="cart-button" >
-              Add to Cart
+              Add to Bag
             </button>
           </Link>}
-          {errors.map(error => <li key={error}>{error}</li>)}
+          {errors.map(error => <p className="error-message-for-size" key={error}>{error}</p>)}
+
+          {showSuccessMessage && (
+            <div className="success-message">
+              <p>Item added to bag successfully!</p>
+            </div>
+          )}
+
+
         </div>
         <div className="product-description">
           {product.description}

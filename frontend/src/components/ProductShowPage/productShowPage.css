@@ -122,6 +122,40 @@
   background-color: gray;
 }
 
+/* This code below is for the message that appears when you add to the cart. And then it fades away.  */
+
+.success-message {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background-color: #000000; 
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeOut 2.2s ease-in-out;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* This code above is for the message that appears when you add to the cart. And then it fades away.  */
+
+/* The code below is the error message when the size is no selected.  */
+
+.error-message-for-size {
+  color: red;
+}
+
+/* The code above is the error message when the size is no selected.  */
+
 .product-description {
   /* border: 1px solid #ccc; */
   padding: 15px;

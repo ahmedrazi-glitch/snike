@@ -11,6 +11,9 @@ import './home.css';
 
 function Home() {
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <>
@@ -20,7 +23,7 @@ function Home() {
         <img src={sb} alt="" />
           <p className="banner-text">20% OFF SELECT STYLES</p>
           <p className="second-banner-text">Members: Sign in and use code SUMMER to save. Ends 6.36. Exclusions apply.</p>
-          <Link className="shop-button" to='/products/mens' >Shop</Link>
+          <Link className="shop-button" to='/products' onClick={scrollToTop}>Shop</Link>
       </div>
       <br/>
       <br/>
@@ -41,8 +44,8 @@ function Home() {
         <div className="featured-photos" >
           <img src={feat_left} />
           <img src={feat_right} />
-          <Link className="another-shop-button" to='/products/mens' >Shop</Link>
-          <Link className="another-another-shop-button" to='/products/mens' >Shop</Link>
+          <Link className="another-shop-button" to='/products' onClick={scrollToTop}>Shop</Link>
+          <Link className="another-another-shop-button" to='/products' onClick={scrollToTop}>Shop</Link>
         </div>
       </div>
       <br/>
