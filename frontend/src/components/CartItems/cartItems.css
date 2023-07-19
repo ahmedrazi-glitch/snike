@@ -3,16 +3,17 @@
 }
 
 .cart-items-container {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   justify-content: flex-end;
+  margin-top: 2%;
   width: 50%;
-  height: 100vh;
+  height: 600px;
   overflow-y: auto;
-  scrollbar-color: #ff0000 #ffffff;
+  margin-bottom: 2%;
 }
 
 .shopping-summary {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   justify-content: flex-start;
   width: 50%;
 }
@@ -20,7 +21,7 @@
 /* All code below is for the summary stuff of the shopping cart. */
 
 .summary {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   margin-top: 5%;
   margin-left: 5%;
   width: 90%;
