@@ -10,7 +10,31 @@ function CartItems() {
   const currentUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const cartItems = useSelector(getCartItems);
-  // const cartItems = useSelector(state => Object.values(state.cart));  
+  const products = useSelector((state) => state.products);
+ 
+
+  const totalPrice = (items) => {
+    let total = 0;
+    items.forEach((item) => {
+      const product = products[item.productId];
+      if (product) {
+        total += product.price * item.quantity;
+      }
+    });
+    return total;
+  };
+
+  const totalTax = (items) => {
+    let total = 0;
+    items.forEach((item) => {
+      const product = products[item.productId];
+      if (product) {
+        total += product.price * item.quantity * 0.08;
+      }
+    });
+    return total.toFixed(2);
+  };
+
 
   useEffect(() => {
     dispatch(fetchCartItems());
@@ -18,11 +42,44 @@ function CartItems() {
 
   return (
     <>
-      {cartItems.map((cartItem, index) => (
-        <div className="cart-item" key={index}>
-          <CartItem key={cartItem.id} cartItem={cartItem} />
+      <div className="container">
+
+        <div className="cart-items-container">
+          {cartItems.map((cartItem, index) => (
+            <div className="all-cart-items" key={index}>
+              <CartItem key={cartItem.id} cartItem={cartItem} />
+            </div>
+          ))}
         </div>
-      ))}
+
+        <div className="shopping-summary">
+          {/* <p>CartItems: </p> */}
+          <div className="summary" >
+
+            <div className="summary-title">
+              <p>Summary: </p>
+            </div>
+            
+            <div className="subtotal-title-and-amount">
+              <div className="subtotal-title">
+                <p>Subtotal:  </p>
+              </div>
+              <div className="subtotal-amount">
+                <h4>${totalPrice(cartItems)}</h4>
+              </div>
+            </div>
+            
+            
+            <p>Estimated Shipping and handling:</p>
+            <p>Free</p>
+            <h4>Estimated Tax:</h4>
+            <h4>${totalTax(cartItems)}</h4>
+            <p>Total: </p>
+            <h4>$ {(totalPrice(cartItems) + (totalTax(cartItems) * 1)).toFixed(2)}</h4>
+          </div>
+        </div>
+
+      </div>
     </>
   )
 }

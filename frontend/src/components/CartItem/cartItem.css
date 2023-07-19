@@ -1,31 +1,70 @@
-.cart-items-container {
-  /* border: 1px solid black; */
-  height: 100%;
-  overflow: auto;
-  flex-direction: column;
-}
-
-.shopping-summary {
-  /* border: 1px solid blue; */
-  height: 10%;
-}
-
 .cart-item-container {
-  width: 25%;
-  height: 180px;
-  margin-left: 15%;
-  /* border: 1px solid red; */
-  /* overflow: auto; */
-  flex-direction: row;
-} 
+  border: 1px solid red;
+  display: flex;
+  /* height: 40%; */
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+
+.cart-item-photo {
+  width: 50%;
+}
 
 .cart-item-photo img {
-  width: 25%;
-  height: 25%;
+  margin-left: 3%;
+  width: 70%;
+  height: 100%;
+}
+
+.product-description-and-stuff {
+  margin-top: 9%;
+  margin-left: 3%;
+  width: 50%;
+}
+
+.product-name {
+  margin-bottom: 1%;
+}
+
+.product-name p {
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: inherit;
+}
+
+.size {
+  margin-bottom: 1%;
+}
+
+.size label {
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: inherit;
 }
 
 .quantity {
-  flex-direction: row;
+  margin-bottom: 1%;
+}
+
+.quantity label {
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: inherit;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+}
+
+.size {
+  display: flex;
+  align-items: center;
 }
 
 #trash-button-to-delete-cart-item {
@@ -33,3 +72,19 @@
   width: 5%;
   height: 5%;
 }
+
+/* below is styling for the quantities button  */
+
+.quantities-options:hover {
+  cursor: pointer;
+}
+
+/* above is styling for the quantities button  */
+
+/* below is styling for the size button  */
+
+.sizes-options:hover {
+  cursor: pointer;
+}
+
+/* above is styling for the size button  */

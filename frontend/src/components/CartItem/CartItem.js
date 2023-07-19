@@ -59,39 +59,50 @@ function CartItem({ cartItem }) {
 
   return product ?  (
     <>
-    <div className="cart-items-container">
-      <div className="shopping-summary">
+      {/* <div className="container"> */}
 
-      </div>
-      <div className="cart-item-container">
-        <div className="cart-item-photo" >
-          <img src={product.photoUrl} alt={product.name} />
-          {cartItem.quantity}
-          <div className="size" >
-            <label>Size:      </label>
-            <select value={size} onChange={handleSizeChange} >
-              {sizes.map((size) => (
-                <option value={size} key={size}>
-                  {size}
-                </option>
-              ))}
-            </select>
+        {/* <div className="shopping-summary">
+          <p>Summary: </p>
+        </div> */}
+
+        
+        <div className="cart-item-container">
+          <div className="cart-item-photo">
+            <img src={product.photoUrl} alt={product.name} />
           </div>
-          <div className="quantity">
-            <label> Quantity:     </label> 
-            <select value={quantity} onChange={handleQuantityChange} >
-            {/* style={{ border: 'none' }} */}
-              {quantities.map((_, index) => (
-                <option key={index} value={index + 1}>
-                  {index + 1}
-                </option>
-              ))}
-            </select>
+
+          <div className="product-description-and-stuff">
+            <div className="product-name">
+              <p>{product.name}</p>
+            </div>
+            
+            <div className="size" >
+              <label>Size:      </label>
+              <select value={size} onChange={handleSizeChange} className="sizes-options">
+                {sizes.map((size) => (
+                  <option value={size} key={size}>
+                    {size}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="quantity">
+              <label> Quantity:     </label> 
+              <select value={quantity} onChange={handleQuantityChange} className="quantities-options">
+              {/* style={{ border: 'none' }} */}
+                {quantities.map((_, index) => (
+                  <option key={index} value={index + 1} >
+                    {index + 1}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <i id='trash-button-to-delete-cart-item' class="fa-solid fa-trash" onClick={() => dispatch(deleteCartItem(cartItem.id))}></i>
+            </div>
           </div>
         </div>
-        <i id='trash-button-to-delete-cart-item' class="fa-solid fa-trash" onClick={() => dispatch(deleteCartItem(cartItem.id))}></i>
-      </div>
-    </div>
+      {/* </div> */}
     </>
   ): null;
 }
