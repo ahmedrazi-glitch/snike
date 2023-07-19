@@ -2,12 +2,6 @@
   display: flex;
 }
 
-.shopping-summary {
-  border: 1px solid black;
-  justify-content: flex-start;
-  width: 50%;
-}
-
 .cart-items-container {
   border: 1px solid black;
   justify-content: flex-end;
@@ -17,12 +11,146 @@
   scrollbar-color: #ff0000 #ffffff;
 }
 
+.shopping-summary {
+  border: 1px solid black;
+  justify-content: flex-start;
+  width: 50%;
+}
+
 /* All code below is for the summary stuff of the shopping cart. */
+
+.summary {
+  border: 1px solid green;
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 90%;
+  height: 90%;
+}
+
+.summary-title {
+  margin-top: 15%;
+  margin-left: 15%;
+  margin-bottom: 3%;
+}
+
+.summary-title p {
+  font-size: 30px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+}
 
 .subtotal-title-and-amount {
   display: flex;
+  margin-left: 15%;
+  margin-bottom: 1%;
+}
+
+.subtotal-title p {
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+
+.subtotal-amount h4 {
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
 }
 
 .subtotal-title {
-  margin-right: 10px; 
+  margin-right: 60.5%; 
 }
+
+.shipping-info {
+  display: flex;
+  margin-left: 15%;
+  margin-bottom: 1%;
+}
+
+.estimated-shipping-and-handling {
+  margin-right: 30%;
+}
+
+.estimated-shipping-and-handling p {
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+
+.shipping-always-free p {
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+
+.tax-info {
+  display: flex;
+  margin-left: 15%;
+  margin-bottom: 1%;
+}
+
+.extimated-tax p {
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+
+.tax-amount h4 {
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+
+.extimated-tax {
+  margin-right: 54%;
+}
+
+.total-due-info {
+  display: flex;
+  margin-left: 15%;
+  margin-bottom: 1%;
+}
+
+.total-title p {
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+
+.total-due-amount h4 {
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+
+.total-title {
+  margin-right: 65.5%;
+}
+
+.goodbye-button {
+  margin-top: 1%;
+  margin-left: 45%;
+
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border-radius: 40px;
+  transition: background-color 0.3s;
+}
+
+.goodbye-button:hover {
+  background-color: gray;
+}
+

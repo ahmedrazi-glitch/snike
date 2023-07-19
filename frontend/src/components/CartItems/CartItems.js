@@ -21,7 +21,7 @@ function CartItems() {
         total += product.price * item.quantity;
       }
     });
-    return total;
+    return total.toFixed(2);
   };
 
   const totalTax = (items) => {
@@ -69,13 +69,36 @@ function CartItems() {
               </div>
             </div>
             
+            <div className="shipping-info">
+              <div className="estimated-shipping-and-handling">
+                <p>Estimated shipping and handling:</p>
+              </div>
+              <div className="shipping-always-free"> 
+                <p>Free</p>
+              </div>
+            </div>
             
-            <p>Estimated Shipping and handling:</p>
-            <p>Free</p>
-            <h4>Estimated Tax:</h4>
-            <h4>${totalTax(cartItems)}</h4>
-            <p>Total: </p>
-            <h4>$ {(totalPrice(cartItems) + (totalTax(cartItems) * 1)).toFixed(2)}</h4>
+            <div className="tax-info">
+              <div className="extimated-tax">
+                <p>Estimated Tax:</p>
+              </div>
+              <div className="tax-amount">
+                <h4>${totalTax(cartItems)}</h4>
+              </div>
+            </div>
+            
+            <div className="total-due-info">
+              <div className="total-title">
+                <p>Total: </p>
+              </div>
+              <div className="total-due-amount">
+                <h4>$ {((totalPrice(cartItems) * 1) + (totalTax(cartItems) * 1)).toFixed(2)}</h4>
+              </div>
+            </div>
+            
+            <button className="goodbye-button">
+              Checkout 
+            </button>
           </div>
         </div>
 
