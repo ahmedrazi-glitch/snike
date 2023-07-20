@@ -1,0 +1,57 @@
+.goodbye-modal-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goodbye-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 800px; 
+  height: 400px;
+  text-align: center;
+}
+
+.goodbye-message {
+  margin-top: 3%;
+  margin-bottom: 6%;
+}
+
+.goodbye-message p {
+  font-size: 30px;
+  font-weight: 500; 
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+}
+
+.goodbye-icons {
+  display: flex;
+  margin-left: 25%;
+  margin-bottom: 6%;
+}
+
+.goodbye-github-icon {
+  margin-right: 30%;
+}
+
+.back-to-home-button {
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.back-to-home-button:hover {
+  background-color: gray;
+}

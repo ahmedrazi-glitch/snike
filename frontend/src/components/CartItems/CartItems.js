@@ -1,9 +1,11 @@
 import React from "react";
 import { useEffect } from "react";
-// import { useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartItems, getCartItems } from "../../store/cartItems";
+import { Link } from "react-router-dom";
 import CartItem from "../CartItem/CartItem";
+import GoodbyeModal from "../GoodbyeModal/GoodbyeModal";
 import './cartItems.css';
 
 function CartItems() {
@@ -11,6 +13,17 @@ function CartItems() {
   const dispatch = useDispatch();
   const cartItems = useSelector(getCartItems);
   const products = useSelector((state) => state.products);
+
+  const [showModal, setShowModal] = useState(false);
+
+  const handleGoodbyeClick = () => {
+    // debugger
+    setShowModal(true);
+  };
+
+  const handleModalCancel = () => {
+    setShowModal(false);
+  };
  
 
   const totalPrice = (items) => {
@@ -96,13 +109,21 @@ function CartItems() {
               </div>
             </div>
             
-            <button className="goodbye-button">
-              Checkout 
-            </button>
+            <Link to={<GoodbyeModal/>}>
+              <button className="goodbye-button" onClick={handleGoodbyeClick}>
+                Checkout 
+              </button>
+            </Link>
           </div>
         </div>
 
       </div>
+
+      {showModal && (
+        <GoodbyeModal
+          onCancel={handleModalCancel}
+        />
+      )}
     </>
   )
 }
