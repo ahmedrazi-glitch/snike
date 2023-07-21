@@ -15,8 +15,117 @@
   padding: 20px;
   border-radius: 5px;
   width: 800px; 
-  height: 400px;
+  height: 680px;
+  overflow-y: auto;
   text-align: center;
 }
 
+.create-review-header {
+  margin-bottom: 1%;
+}
+
+.create-review-header p {
+  font-weight: 500;
+  font-size: 24px;
+  font-family: Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+}
+
+.create-review-subheader {
+  margin-bottom: 1%;
+}
+
+.create-review-subheader p {
+  color: #757575;
+  font-size: 16px;
+
+  font-family: Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+}
+
+.create-review-title-box {
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+
+.ratings-header {
+  display: flex;
+  margin-left: 20%;
+  margin-bottom: 1%;
+}
+
+.ratings-header p {
+  margin-right: 1%;
+  font-weight: 400;
+  font-family: Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  font-size: 20px;
+}
+
+.ratings-header h1 {
+  color: red;
+}
+
+.rating-input {
+  display: flex;
+  margin-left: 20%;
+  margin-bottom: 2%;
+}
+
+.review-body-title {
+  display: flex;
+  margin-left: 20%;
+  margin-bottom: 1%;
+}
+
+.review-body-title h1 {
+  color: red;
+}
+
+.review-body-title p {
+  margin-right: 1%;
+  font-weight: 400;
+  font-family: Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  font-size: 20px;
+}
+
+.review-body-box textarea {
+  /* width: 60%; */
+  /* height: 70%; */
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.review-body-box {
+  margin-bottom: 1%;
+}
+
+.review-title-box {
+  display: flex;
+  margin-left: 20%;
+  margin-bottom: -2%;
+}
+
+.review-title-box p {
+  font-weight: 400;
+  font-family: Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  font-size: 22px;
+}
+
+.create-review-title-box input {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.create-review-button {
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border-radius: 40px;
+  transition: background-color 0.3s;
+}
+
+.create-review-button:hover {
+  background-color: gray;
+}
 

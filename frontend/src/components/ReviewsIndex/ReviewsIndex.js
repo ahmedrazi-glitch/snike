@@ -30,7 +30,7 @@ function ReviewsIndex() {
           ?
         <Link className="create-review-form-button-link" to={<CreateReviewModal/>} >
           <button className="create-review-form-button" onClick={handleCreateClick}>
-            Create a Review
+            Write a Review
           </button>
         </Link> 
           :
