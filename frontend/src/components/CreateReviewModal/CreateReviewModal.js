@@ -32,7 +32,8 @@ function CreateReviewModal({ onCancel }) {
 
   const handleRatingChange = (e) => {
     // e.preventDefault();
-    setRating(e);
+    // setRating(e);
+    setRating(parseInt(e));
   };
 
   const newReview = {
@@ -83,6 +84,7 @@ function CreateReviewModal({ onCancel }) {
                 onClick={() => handleRatingChange(1)} 
               >
                 <i class="fa fa-star"></i>       
+                {/* <i class="fa-light fa-star"></i> */}
               </div>
               <div 
                 className={activeRating >= 2 ? "filled" : "empty"} 

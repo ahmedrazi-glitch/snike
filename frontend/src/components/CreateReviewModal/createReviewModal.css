@@ -69,6 +69,18 @@
   margin-bottom: 2%;
 }
 
+/* The code below is suppose to change color over hovering or when a rating is given */
+
+.rating-input .filled {
+  color: black;
+}
+
+.rating-input .empty {
+  color: grey;
+}
+
+/* The code above is suppose to change color over hovering or when a rating is given */
+
 .review-body-title {
   display: flex;
   margin-left: 20%;

@@ -29,12 +29,24 @@
   font-family: Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
 }
 
-/* .editForm {
-  margin-top: 5%;
-  flex-direction: column;
-  justify-content: space-around;
-  margin-bottom: 5%;
-} */
+.edit-review-rating-input {
+  display: flex;
+  margin-left: 20%;
+  margin-bottom: 2%;
+}
+
+/* The code below is suppose to change color over hovering or when a rating is given */
+
+.edit-review-rating-input .filled {
+  color: black;
+}
+
+.edit-review-rating-input .empty {
+  color: grey;
+}
+
+/* The code above is suppose to change color over hovering or when a rating is given */
+
 .edit-review-body-header {
   display: flex;
   margin-bottom: -2%;
@@ -87,6 +99,8 @@
   margin-bottom: 3%;
 } */
 
+/* The code below is for edit rating bar that will eventually go away and will be replaced with stars */
+
 .editRating {
   margin-top: 3%;
   margin-bottom: 3%;
@@ -95,6 +109,8 @@
 .editRating input {
   border: 1px solid black;
 }
+
+/* The code below is for edit rating bar that will eventually go away and will be replaced with stars */
 
 .edit-review-modal-buttons {
   display: flex;
