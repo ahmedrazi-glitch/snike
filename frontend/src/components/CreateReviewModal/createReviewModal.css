@@ -109,7 +109,7 @@
   font-size: 22px;
 }
 
-.create-review-title-box input {
+.create-review-title-box textarea {
   border: 1px solid black;
   border-radius: 10px;
 }
@@ -128,4 +128,6 @@
 .create-review-button:hover {
   background-color: gray;
 }
+
+
 

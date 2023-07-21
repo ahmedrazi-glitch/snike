@@ -126,7 +126,7 @@ function CreateReviewModal({ onCancel }) {
             <div className="review-body-box">
               <textarea
                 // placeholder=""
-                style={{ height: '192px', width: '453px' }} 
+                style={{ height: '192px', width: '453px', padding: '5px' }} 
                 value={body}
                 onChange={handleBodyChange}
                 required
@@ -138,10 +138,10 @@ function CreateReviewModal({ onCancel }) {
             </div>
 
             <div className="create-review-title-box">
-              <input
+              <textarea
                 type="text"
                 // placeholder="Title"
-                style={{ height: '92px', width: '453px' }}
+                style={{ height: '92px', width: '453px', padding: '5px' }}
                 value={title}
                 onChange={handleTitleChange}
                 required
@@ -149,7 +149,7 @@ function CreateReviewModal({ onCancel }) {
             </div>
 
             <div className="star-rating">
-              <div className="editRating" >
+              <div className="create-review-edit-rating" >
                 <label></label>
                 <input type="number" value={rating} onChange={handleRatingChange} required />
               </div>

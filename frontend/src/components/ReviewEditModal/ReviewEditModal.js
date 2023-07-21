@@ -36,26 +36,58 @@ function ReviewEditModal({ review, onCancel }) {
     <>
       <div className="modal" onClick={onCancel}>
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-          <h2>EDIT REVIEW</h2>
+
+          <div className="edit-review-header">
+            <p>Edit a Review</p>
+          </div>
+
           <form className="editForm" onSubmit={handleSubmit}>
-            <div className="editTitle" >
-              <label>Title:</label>
-              <input type="text" value={title} onChange={handleTitleChange} />
+
+
+            <div className="edit-review-body-header">
+              <p>Your Review</p>
             </div>
-            <div className="editBody" >
-              <label>Body:</label>
-              <textarea value={body} onChange={handleBodyChange} />
+
+            <div className="edit-body-box" >
+              {/* <label>Body:</label> */}
+              <textarea 
+                value={body} 
+                onChange={handleBodyChange} 
+                style={{ height: '192px', width: '453px', padding: '5px' }}
+              />
             </div>
+
+            <div className="edit-review-title">
+              <p>Review title</p>
+            </div>
+
+            <div className="edit-form-title" >
+              {/* <label>Title:</label> */}
+              <textarea 
+                type="text" 
+                value={title} 
+                onChange={handleTitleChange}
+                style={{ height: '92px', width: '453px', padding: '5px' }}
+              />
+            </div>
+
             <div className="editRating" >
-              <label>Rating:</label>
+              {/* <label>Rating:</label> */}
               <input type="number" value={rating} onChange={handleRatingChange} />
             </div>
-            <div className="modal-buttons">
-              <button type="submit">Submit</button>
-              <button type="button" onClick={onCancel}>
-                Cancel
-              </button>
+
+            <div className="edit-review-modal-buttons">
+              <div className="edit-review-submit-button">
+                <button type="submit">Submit</button>
+              </div>
+
+              <div className="edit-review-cancel-button">
+                <button type="button" onClick={onCancel}>
+                  Cancel
+                </button>
+              </div>
             </div>
+
           </form>
         </div>
       </div>
