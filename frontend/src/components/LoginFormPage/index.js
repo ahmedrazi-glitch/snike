@@ -70,11 +70,11 @@ function LoginFormPage() {
             </label>
           </div>
 
-          <div className="login-terms">
+          {/* <div className="login-terms">
 
             <label htmlFor="agreement">By continuing, I Agree to Snike's <a className="PP">Privacy Policy</a> and <a className="TOU">Terms of Use.</a>
             </label>
-          </div>
+          </div> */}
           
 
           <div className="signIn-button-container">
