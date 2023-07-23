@@ -78,7 +78,7 @@ function CartItems() {
                 <p>Subtotal:  </p>
               </div>
               <div className="subtotal-amount">
-                <h4>${totalPrice(cartItems)}</h4>
+                <h4>$ {totalPrice(cartItems)}</h4>
               </div>
             </div>
             
@@ -96,7 +96,7 @@ function CartItems() {
                 <p>Estimated Tax:</p>
               </div>
               <div className="tax-amount">
-                <h4>${totalTax(cartItems)}</h4>
+                <h4>$ {totalTax(cartItems)}</h4>
               </div>
             </div>
             

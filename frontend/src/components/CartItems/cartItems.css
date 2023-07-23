@@ -62,7 +62,7 @@
 }
 
 .subtotal-title {
-  margin-right: 60.5%; 
+  margin-right: 60%; 
 }
 
 .shipping-info {
@@ -73,6 +73,7 @@
 
 .estimated-shipping-and-handling {
   margin-right: 30%;
+  margin-right: 25%;
 }
 
 .estimated-shipping-and-handling p {
@@ -110,7 +111,7 @@
 }
 
 .extimated-tax {
-  margin-right: 54%;
+  margin-right: 51.5%;
 }
 
 .total-due-info {
