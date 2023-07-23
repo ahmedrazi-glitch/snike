@@ -122,11 +122,6 @@ function ReviewEditModal({ review, onCancel }) {
               />
             </div>
 
-            <div className="editRating" >
-              {/* <label>Rating:</label> */}
-              <input type="number" value={rating} onChange={handleRatingChange} />
-            </div>
-
             <div className="edit-review-modal-buttons">
               <div className="edit-review-submit-button">
                 <button type="submit">Submit</button>

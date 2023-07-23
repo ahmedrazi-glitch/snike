@@ -150,13 +150,6 @@ function CreateReviewModal({ onCancel }) {
               />
             </div>
 
-            <div className="star-rating">
-              <div className="create-review-edit-rating" >
-                <label></label>
-                <input type="number" value={rating} onChange={handleRatingChange} required />
-              </div>
-            </div>
-
             <button className="create-review-button" type="submit">Submit</button>
 
           </form>
