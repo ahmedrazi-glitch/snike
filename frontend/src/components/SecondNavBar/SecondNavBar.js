@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSearchResults, fetchCategoryProducts, fetchProducts } from "../../store/products";
 import { useHistory } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
+import { AiOutlineShopping } from 'react-icons/ai';
 import "./SecondNavBar.css";
 
 
@@ -90,11 +91,13 @@ function SecondNavBar() {
           <div className="bag-icon" >
             {currentUser ? 
               <Link to={`/cart`}>
-                <i  id="bag" class="fas fa-shopping-bag" ></i>
+                {/* <i  id="bag" class="fas fa-shopping-bag" ></i> */}
+                <AiOutlineShopping id="bag" />
               </Link>
               :
               <Link to={`/login`}>
-                <i  id="bag" class="fas fa-shopping-bag" ></i>
+                {/* <i  id="bag" class="fas fa-shopping-bag" ></i> */}
+                <AiOutlineShopping id="bag" />
               </Link>
             }
           </div>

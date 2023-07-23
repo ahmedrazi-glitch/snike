@@ -14,7 +14,6 @@ function ProductIndexPage() {
   useEffect(() => {
     const arr = window.location.pathname.split('/');
     if (!arr.includes('search')) {
-      // dispatch(fetchSearchResults(params));
       dispatch(fetchProducts());
     } else if (arr.includes('Kids')) {
       dispatch(fetchCategoryProducts('Kids'));
@@ -28,7 +27,7 @@ function ProductIndexPage() {
   }, [window.location.pathname]);
 
 
-  return (
+  return products.length > 0 ? (
     <div className='page-wrapper' >
       <div className="product-index-page">
         {/* <CategoryComponent/> */}
@@ -44,6 +43,13 @@ function ProductIndexPage() {
             </Link>
           ))}
         </div> 
+      </div>
+    </div>
+  ) : (
+    <div className='page-wrapper'>
+      <div className="no-results-div">
+        <h1>No Results Found</h1>
+        <h1>Please try another search term.</h1>
       </div>
     </div>
   );
