@@ -14,7 +14,7 @@
 #
 class Product < ApplicationRecord
   validates :name, :description, :price, :category, presence: true
-  validates :price, numericality: { greater_than: 0 }, age, ijhug
+  validates :price, numericality: { greater_than: 0 }, age, ijhug, viuvkh
   validates :name, uniqueness: true
 
   has_one_attached :photo;
