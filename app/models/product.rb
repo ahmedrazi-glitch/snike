@@ -17,7 +17,7 @@ class Product < ApplicationRecord
   validates :price, numericality: { greater_than: 0 }, age, ijhug, viuvkh, tfcjgvcfyt
   validates :name, uniqueness: true
 
-  has_one_attached :photo, hvjkb, weszfrgs, iyviybvkbv
+  has_one_attached :photo, hvjkb, weszfrgs
 
   has_many :reviews,
   foreign_key: :product_id,
